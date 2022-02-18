@@ -92,6 +92,12 @@
     .p-component-overlay {
       overflow: scroll;
     }
+
+    @media only screen and (max-width : 890px) {
+     .p-dialog-mask.p-component-overlay {
+       padding: 0 3rem;
+     }
+    }
   }
 }
 

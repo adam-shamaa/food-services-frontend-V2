@@ -1,185 +1,7 @@
-
-
-#meta-information, #service-provider-select-container {
-  margin-bottom: 2rem;
-
-  .meta-line {
-    font-family: "Nunito Sans";
-    font-size: 15px;
-    margin: 0rem;
-    color: #83859C;
-  }
-}
-
-.restaurant-details-info {
-  display: flex;
-  flex-direction: row;
-
-  .restaurants-details-section {
-    width: 50%;
-
-    .restaurants-details-section-header {
-      font-family: "Nunito Sans";
-      font-weight: 600;
-      font-size: 16px;
-
-      /* neutral/black */
-      color: #2B2B43;
-      margin: 0 0 1rem 0;
-    }
-  }
-}
-
-.menu-item {
-  /* neutral / white */
-  background: #FFFFFF;
-  /* neutral/gray lightest */
-  border: 1px solid #EDEEF2;
-  box-sizing: border-box;
-  border-radius: 5px;
-  padding: 1rem;
-  margin: 1rem 0;
-
-  .menu-item-header {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-
-    span {
-      font-family: "Nunito Sans";
-      font-weight: 600;
-      font-size: 14px;
-      color: #2B2B43;
-    }
-  }
-
-  .menu-item-body > span{
-    font-family: "Nunito Sans";
-    font-weight: 500;
-    font-size: 12px;
-    color: #A7A7A7;
-  }
-}
-
-::ng-deep {
-  .p-button {
-    padding: 0.5rem 1rem;
-    width: 100%;
-    box-shadow: 0px 8px 20px rgba(78, 96, 255, 0.16);
-
-    font-family: "Nunito Sans";
-    font-weight: 500;
-    font-size: 14px;
-    margin: 1rem 0;
-  }
-}
-
-hr {
-  background: #FFFFFF;
-  border: 1px solid #EDEEF2;
-  box-sizing: border-box;
-  border-radius: 5px;
-  margin: 0 1rem;
-}
-
-.fee-line {
-  display: flex;
-  justify-content: space-between;
-
-  p {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    color: #83859C;
-    margin: 0.2rem 0;
-  }
-}
-
-
 .container {
   width: 50rem;
 
-  #restaurant-title {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    color: #2B2B43;
-  }
-
-  #service-providers {
-    font-family: "Nunito Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    color: #2B2B43;
-
-    margin: 1rem 0;
-  }
-
-
   ::ng-deep {
-    mat-button-toggle-group {
-      background-color: #EFEFF0;
-      padding: 0.3rem;
-      border-radius: 6px;
-      border: none;
-    }
-
-    mat-button-toggle {
-      border-radius: 6px;
-
-      background-color: #EFEFF0;
-      padding: 0.2rem;
-
-      border: none;
-
-      -webkit-appearance: none;
-      -webkit-border-radius: 0px;
-    }
-
-    mat-button-toggle:hover {
-      background-color: white;
-      opacity: 100%;
-    }
-
-    .mat-button-toggle-checked {
-      border-radius: 6px;
-      background-color: white;
-    }
-    .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-      line-height: initial;
-
-      font-family: "Nunito Sans";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 15px;
-      line-height: 20px;
-
-      /* Label Colors/LC L Primary */
-      color: #000000;
-
-      padding: 0;
-
-      min-width: 10rem;
-    }
-    .mat-button-toggle-ripple {
-      border-radius: 6px;
-    }
-    .mat-button-toggle-checked .mat-button-toggle-focus-overlay {
-      border: 0;
-    }
-  }
-
-  ::ng-deep {
-    .p-card {
-      width: 100%;
-      height: 100%;
-    }
-    .p-card-body {
-      padding: 2rem;
-    }
     .p-card-header {
       height: 8rem;
       img {
@@ -189,24 +11,178 @@ hr {
     .p-element {
       .p-card {
         background: #FFFFFF;
-
         border-radius: 16px;
         border: 1px solid #EDEEF2;
-        box-shadow: none;
-
-        font-family: "Nunito Sans";
-        font-size: 12px;
-
-        overflow: hidden;
+        width: 100%;
+        height: 100%;
       }
-      .p-card-body, .p-card-content, .p-card-footer {
+      .p-card-content, .p-card-footer {
         padding: 0;
       }
       .p-card-body {
+        padding: 1.5rem;
         height: 100%;
       }
-      .p-card-body {
-        padding: 1.5rem;
+    }
+  }
+
+  #restaurant-title {
+    font-family: "Nunito Sans";
+    font-size: 18px;
+    color: #2B2B43;
+  }
+
+  #meta-information, #service-provider-select-container {
+    margin-bottom: 2rem;
+  }
+
+  #meta-information > .meta-line {
+    font-family: "Nunito Sans";
+    font-size: 15px;
+    margin: 0rem;
+    color: #83859C;
+  }
+
+  #service-provider-select-container {
+     h3 {
+      font-family: "Nunito Sans";
+      font-weight: 600;
+      font-size: 16px;
+      color: #2B2B43;
+      margin: 1rem 0;
+    }
+    ::ng-deep {
+      mat-button-toggle-group {
+        background-color: #EFEFF0;
+        padding: 0.3rem;
+        border-radius: 6px;
+        border: none;
+      }
+      mat-button-toggle {
+        border-radius: 0;
+        background-color: #EFEFF0;
+        padding: 0.2rem;
+      }
+      mat-button-toggle:hover, .mat-button-toggle-checked {
+        background-color: white;
+      }
+      mat-button-toggle {
+        width: 10rem;
+      }
+      .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+        font-family: "Nunito Sans";
+        font-size: 15px;
+        line-height: 20px;
+      }
+      .mat-button-toggle-ripple, mat-button-toggle:hover, .mat-button-toggle-checked {
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .restaurant-details-info {
+    display: flex;
+    flex-direction: row;
+
+    hr {
+      background: #FFFFFF;
+      border: 1px solid #EDEEF2;
+      box-sizing: border-box;
+      border-radius: 5px;
+      margin: 0 1rem;
+    }
+
+    .restaurants-details-section {
+      width: 50%;
+
+      .restaurants-details-section-header {
+        font-family: "Nunito Sans";
+        font-size: 16px;
+        color: #2B2B43;
+        margin: 0 0 1rem 0;
+      }
+
+      .menu-item {
+        background: #FFFFFF;
+        border: 1px solid #EDEEF2;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem 0;
+        .menu-item-header {
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: space-between;
+          span {
+            font-family: "Nunito Sans";
+            font-weight: 600;
+            font-size: 14px;
+            color: #2B2B43;
+          }
+        }
+        .menu-item-body > span{
+          font-family: "Nunito Sans";
+          font-weight: 500;
+          font-size: 12px;
+          color: #A7A7A7;
+        }
+      }
+
+      .fee-line {
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-family: "Nunito Sans";
+          font-weight: 500;
+          font-size: 15px;
+          color: #83859C;
+          margin: 0.2rem 0;
+        }
+      }
+
+      ::ng-deep {
+        #order-now-button {
+          .p-button {
+            padding: 0.5rem 1rem;
+            width: 100%;
+            box-shadow: 0px 8px 20px rgba(78, 96, 255, 0.16);
+
+            font-family: "Nunito Sans";
+            font-weight: 500;
+            font-size: 14px;
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 890px) {
+  .container {
+    width: unset;
+
+    .restaurant-details-info {
+      flex-direction: column-reverse;
+
+      hr {
+        margin: 2rem 0;
+      }
+
+      .restaurants-details-section {
+        width: 100%;
+      }
+    }
+
+    #service-provider-select-container {
+      ::ng-deep {
+        mat-button-toggle-group {
+          width: 100%;
+        }
+        mat-button-toggle {
+          width: 100%;
+          text-align: center;
+        }
       }
     }
   }

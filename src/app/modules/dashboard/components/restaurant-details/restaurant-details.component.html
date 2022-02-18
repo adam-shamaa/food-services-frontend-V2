@@ -3,13 +3,12 @@
     <ng-template pTemplate="header">
       <img [src]="this.restaurant.imageURL"/>
     </ng-template>
-    <h2 id="restaurant-title" class="fw-600 dark-purple">{{this.restaurant.name}}</h2>
+    <h2 id="restaurant-title" class="fw-700 dark-purple">{{this.restaurant.name}}</h2>
     <div id="meta-information">
-      <p id="delivery-time" class="meta-line">30-40 min</p>
-      <p id="rating" class="meta-line">8.2 rating</p>
+      <p class="meta-line">30-40 min</p>
+      <p class="meta-line">8.2 rating</p>
     </div>
     <div id="service-provider-select-container">
-      <h3 id="service-providers">Service Providers</h3>
       <mat-button-toggle-group name="serviceProvider" aria-label="Service Provider" (change)="handleServiceProviderChange($event)">
         <mat-button-toggle *ngFor="let serviceProvider of this.restaurant.serviceProviders" [value]="serviceProvider.serviceProviderName" >
           {{serviceProvider.serviceProviderName}}
@@ -18,7 +17,7 @@
     </div>
     <div class="restaurant-details-info" >
       <div class="restaurants-details-section" *ngIf="selectedServiceProvider">
-        <h3 class="restaurants-details-section-header">Menu</h3>
+        <h3 class="restaurants-details-section-header fw-600">Menu</h3>
         <div *ngFor="let category of selectedServiceProvider.menu">
           <h3>{{category.categoryName}}</h3>
           <div class="menu-item" *ngFor="let categoryItem of category.categoryItems">
@@ -34,20 +33,20 @@
       </div>
       <hr/>
       <div class="restaurants-details-section">
-        <h3 class="restaurants-details-section-header">Fees</h3>
+        <h3 class="restaurants-details-section-header fw-600">Fees</h3>
         <div *ngIf="selectedServiceProvider">
           <div class="fee-line" *ngFor="let fee of selectedServiceProvider.fees">
             <p>{{fee.name}}</p>
             <p>${{fee.amountCents}}</p>
           </div>
-          <p-button label="Order Now" ></p-button>
+          <p-button label="Order Now" id="order-now-button"></p-button>
         </div>
       </div>
     </div>
   </p-card>
 </div>
 
-<ng-template #skeletonLoader>
+<ng-template #skeletonLoader id="skeleton">
   <div class="container">
     <p-card styleClass="p-card-shadow">
       <ng-template pTemplate="header">
