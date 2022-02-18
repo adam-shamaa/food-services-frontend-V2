@@ -1,0 +1,39 @@
+$input-background-color: #EDEEF2;
+
+::ng-deep {
+  .p-inputgroup > i, input {
+    background: $input-background-color;
+  }
+
+  .p-inputtext:enabled:focus {
+    box-shadow: none;
+  }
+
+  .p-inputgroup > i {
+    background-color: #EDEEF2;
+    border: none !important;
+  }
+
+  .p-inputgroup p-autocomplete  {
+    .p-component {
+      min-width: 100%;
+    }
+
+    input {
+      font-family: "Nunito Sans";
+      font-size: 14px;
+      font-weight: 300;
+      color: #83859C;
+      opacity: 100%;
+
+      width: 100%;
+      background: #EDEEF2;
+      border: none;
+    }
+
+    input::placeholder {
+      color: #83859C;
+      opacity: 100%;
+    }
+  }
+}

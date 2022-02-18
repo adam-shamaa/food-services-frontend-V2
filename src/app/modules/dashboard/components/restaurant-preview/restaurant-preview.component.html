@@ -1,0 +1,21 @@
+<p-card styleClass="p-card-shadow" *ngIf="restaurant; else skeletonLoader">
+  <ng-template pTemplate="header">
+    <img [src]="restaurant.imageURL"/>
+  </ng-template>
+  <h2 id="restaurant-title" class="fw-600 dark-purple">{{restaurant.name}}</h2>
+  <div id="meta-information">
+    <i class="pi pi-clock"></i>
+    {{restaurant.estimatedDeliveryTime}} min &#183; {{restaurant.rating}} rating
+  </div>
+</p-card>
+
+<ng-template #skeletonLoader>
+  <p-card>
+    <ng-template pTemplate="header">
+      <p-skeleton [shape]="'rectangle'" height="12rem"> </p-skeleton>
+    </ng-template>
+    <p-skeleton width="40%" height="0.9rem" styleClass="p-skeleton-margin"></p-skeleton>
+    <p-skeleton width="80%" height="0.9rem" styleClass="p-skeleton-margin"></p-skeleton>
+  </p-card>
+</ng-template>
+

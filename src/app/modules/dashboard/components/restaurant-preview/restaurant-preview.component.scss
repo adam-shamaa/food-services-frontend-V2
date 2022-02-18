@@ -1,0 +1,75 @@
+::ng-deep {
+  .p-element {
+    .p-card {
+      background: #FFFFFF;
+
+      border-radius: 16px;
+      border: 1px solid #EDEEF2;
+      box-shadow: none;
+
+
+      font-family: "Nunito Sans";
+      font-size: 12px;
+
+      overflow: hidden;
+    }
+    .p-card-body, .p-card-content, .p-card-footer {
+      padding: 0;
+    }
+    .p-card-body {
+      padding: 0.4rem 0.6rem;
+    }
+    .p-card-content > *, {
+      margin: 0.5rem 0;
+    }
+
+    .p-skeleton-no-margin {
+      margin: 0;
+    }
+
+    .p-skeleton-margin {
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+#restaurant-title {
+  margin: 0;
+}
+
+#meta-information {
+  i {
+    font-size: 0.6rem;
+    padding-right: 0.3rem;
+  }
+
+  color: #83859C;
+
+  font-weight: 400;
+  font-size: 1em;
+
+  display: flex;
+  align-items: center;
+}
+
+.pill-button {
+  color: #545563;
+  background: #EDEEF2;
+
+  border: none;
+  border-radius: 100px;
+
+  margin: 4px 2px;
+  padding: 8px 10px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-weight: 600;
+  font-size: 1em;
+
+  img {
+    margin-right: 8px;
+  }
+}

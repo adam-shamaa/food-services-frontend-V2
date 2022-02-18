@@ -1,0 +1,55 @@
+<p-dialog
+  [(visible)]="isVisible"
+  [style]="{width: 'fit-content', height: 'fit-content'}"
+  [dismissableMask]=true
+  [modal]=true
+  [transitionOptions]="'0ms'"
+  [showHeader]= false
+>
+  <app-restaurant-details [restaurant]="(selectedRestaurant$ | async)"></app-restaurant-details>
+</p-dialog>
+
+<div class="app-container">
+  <div id="nav">
+    <div class="nav-section flex">
+      <img
+        src="./../../../../../assets/img/mock-logo.svg"
+        alt=""
+        width="150"
+      />
+      <h4 id="delivery-address" class="fw-500 dark-purple" *ngIf="(currentAddress$ | async) as currentAddress">
+        Delivery <br/>
+        {{currentAddress.formatted_address}}
+      </h4>
+    </div>
+    <div class="nav-section">
+      <div id="search-restaurants-container">
+        <app-autocomplete></app-autocomplete>
+      </div>
+    </div>
+    <div class="nav-section">
+      <div id="setting-icons" class="flex alight-items-center" (click)="this.handleSettingsShow()">
+        <i class="pi pi-sliders-h"  style="font-size: 2rem"></i>
+        <span>Hide Settings</span>
+      </div>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class="app-container">
+  <app-settings ></app-settings>
+</div>
+
+<!--------- Restaurants List Container ------------------>
+<div class="app-container">
+  <h3 class="fw-400">Nearby Restaurants</h3>
+  <div class="restaurants-list-container" *ngIf="(availableRestaurants$ | async) as availableRestaurants; else skeletonListsContainer">
+    <app-restaurant-preview *ngFor="let availableRestaurant of availableRestaurants" [restaurant]="availableRestaurant" (click)="showDialog(availableRestaurant.id)" ></app-restaurant-preview>
+  </div>
+  <ng-template #skeletonListsContainer class="restaurants-list-container">
+    <div class="restaurants-list-container">
+      <app-restaurant-preview *ngFor="let e of [].constructor(8); let i = index" [restaurant]="undefined"></app-restaurant-preview>
+    </div>
+  </ng-template>
+</div>
+

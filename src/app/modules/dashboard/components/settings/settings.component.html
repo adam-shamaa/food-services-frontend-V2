@@ -1,0 +1,22 @@
+<!--------- Settings Container ------------------>
+<div id="settings-container" *ngIf="this.panelShown">
+  <div id="setting-toggles">
+    <div id="header">
+      <div>
+        <i class="pi pi-times"></i>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%;">
+        <span>Settings</span>
+      </div>
+    </div>
+    <hr/>
+    <div id="estimated-subtotal-container" class="setting-container">
+      <h4>Estimated Subtotal Cost:</h4>
+      <p-slider [(ngModel)]="this.currentValue" data-before="test"></p-slider>
+    </div>
+    <div>
+      <p-dropdown style="min-width: 100%;" [options]="test" [(ngModel)]="restaurantSearch" placeholder="Sort Restaurants By:" ></p-dropdown>
+    </div>
+  </div>
+  <div id="hide-settings" (click)="this.closePanel()"><span>Hide Settings</span></div>
+</div>

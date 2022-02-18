@@ -1,0 +1,134 @@
+
+::ng-deep {
+  #pr_id_2_label::before {
+    font-family: "Nunito Sans";
+    content: "Sort Restaurants By: ";
+    color: #2B2B43;
+  }
+}
+
+:host {
+  #settings-container {
+    display: flex;
+    flex-direction: column;
+
+    background: rgb(246, 246, 246);
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  #setting-toggles {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  #hide-settings {
+    margin-bottom: 1rem;
+    color: #8B8B8F;
+
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+      height: 2rem;
+      background: #616161;
+      text-align: center;
+      font-family: "Nunito Sans";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+
+      span {
+        color: white;
+      }
+    }
+  }
+
+  .setting-container {
+    font-family: "Nunito Sans";
+    color: #2B2B43;
+
+    padding: 1rem;
+
+    background: #FFFFFF;
+    border: 1px solid #DEDFE1;
+    border-radius: 10px;
+
+    margin-right: 1rem;
+
+    width: 100%;
+  }
+  .setting-container > h4 {
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid #EDEEF2;
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+  }
+
+  #header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // FILTER SETTINGS
+  ::ng-deep {
+    .p-slider-handle:focus::before {
+      content: attr(aria-valuenow);
+      top: -2.8rem;
+      left: -0.7rem;
+      position: relative;
+      background-color: #3C4257;
+      padding: 0.5rem;
+      color: #E3E8EE;
+      border-radius: 4px;
+      box-shadow: 0px 1px 2px rgba(55, 65, 81, 0.06), 0px 1px 3px rgba(55, 65, 81, 0.1);
+      font-weight: 600;
+    }
+    .p-dropdown .p-dropdown-label.p-placeholder {
+      font-family: "Nunito Sans";
+      color: #2B2B43;
+    }
+
+    #pr_id_2_label {
+      font-family: "Nunito Sans";
+      color: #8789A1;
+    }
+    .p-dropdown {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width : 960px) {
+    #settings-container {
+      flex-direction: column-reverse;
+      border-radius: 16px;
+      position: initial;
+    }
+    #setting-toggles {
+      flex-direction: row;
+    }
+    hr {
+      display: none;
+    }
+    #header {
+      display: none;
+    }
+    .setting-container {
+      width: 300px;
+    }
+  }
+}
