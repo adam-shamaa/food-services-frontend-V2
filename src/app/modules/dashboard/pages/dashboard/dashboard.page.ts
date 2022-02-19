@@ -13,6 +13,7 @@ import {interval, Observable, Subject} from "rxjs";
 import {RestaurantsService} from "../../../../services/restaurants/restaurants.service";
 import {AggregatedServiceProviderRestaurants, RestaurantMetadata} from "../../../../models/restaurants";
 import {Address} from "../../../landing/components/address-search/address-search.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -22,15 +23,14 @@ import {Address} from "../../../landing/components/address-search/address-search
 export class DashboardPage implements OnInit {
   @ViewChild(SettingsComponent) settingsComponent!: SettingsComponent;
 
-  settingsPanelShown = false;
-  isVisible: boolean = false;
+  isSettingsPanelShown = false;
+  isSelectedRestaurantPanelShown: boolean = false;
   selectedRestaurantID?: string;
 
-  // Store Related Data
+  // Pull in Store Data
   currentAddress$: Observable<Address | undefined>;
   availableRestaurants$: Observable<RestaurantMetadata[] | null>;
   selectedRestaurant$: Observable<AggregatedServiceProviderRestaurants | null>;
-
 
   constructor(private restaurantsService: RestaurantsService) {
     this.availableRestaurants$ = this.restaurantsService.availableRestaurants;
@@ -40,23 +40,11 @@ export class DashboardPage implements OnInit {
 
   ngOnInit(): void {
     this.restaurantsService.getRestaurants()
-    this.restaurantsService.updateAddress({
-      formatted_address: "123 Street Address",
-      street: "",
-      city: "",
-      province: "",
-      country: "",
-      postalCode: "",
-      latitude: 123,
-      longitude: 321
-    })
   }
 
   handleSettingsShow() {
-    if (this.settingsPanelShown) this.settingsComponent.closePanel();
+    if (this.isSettingsPanelShown) this.settingsComponent.closePanel();
     else this.settingsComponent.openPanel();
-
-    this.settingsPanelShown = !this.settingsPanelShown;
   }
 
   showDialog(restaurantId: string) {
@@ -64,7 +52,6 @@ export class DashboardPage implements OnInit {
       this.selectedRestaurantID = restaurantId;
       this.restaurantsService.getRestaurant(restaurantId)
     }
-    this.isVisible = true;
+    this.isSelectedRestaurantPanelShown = true;
   }
-
 }

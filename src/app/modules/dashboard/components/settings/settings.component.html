@@ -1,8 +1,8 @@
 <!--------- Settings Container ------------------>
-<div id="settings-container" *ngIf="this.panelShown">
+<div id="settings-container" *ngIf="this.isPanelShown">
   <div id="setting-toggles">
     <div id="header">
-      <div>
+      <div class="selectable disable-text-select" (click)="this.closePanel()">
         <i class="pi pi-times"></i>
       </div>
       <div style="display: flex; justify-content: center; width: 100%;">
@@ -15,8 +15,8 @@
       <p-slider [(ngModel)]="this.currentValue" data-before="test"></p-slider>
     </div>
     <div>
-      <p-dropdown style="min-width: 100%;" [options]="test" [(ngModel)]="restaurantSearch" placeholder="Sort Restaurants By:" ></p-dropdown>
+      <p-dropdown style="min-width: 100%;" [options]="test" [(ngModel)]="restaurantSearch"  ></p-dropdown>
     </div>
   </div>
-  <div id="hide-settings" (click)="this.closePanel()"><span>Hide Settings</span></div>
+  <div id="hide-settings" (click)="this.closePanel()" class="selectable disable-text-select"><span>Hide Settings</span></div>
 </div>

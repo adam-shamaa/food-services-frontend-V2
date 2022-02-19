@@ -29,7 +29,7 @@ export class RestaurantsService {
     this.availableRestaurants$.next(null);
     setTimeout(() => {
       this.availableRestaurants$.next(MockAvailableRestaurants as RestaurantMetadata[]);
-    }, 1500)
+    }, 0)
     return of(true);
   }
 
@@ -37,7 +37,7 @@ export class RestaurantsService {
     this.selectedRestaurant$.next( null);
     setTimeout(() => {
       this.selectedRestaurant$.next( MockSelectedRestaurant as AggregatedServiceProviderRestaurants);
-    }, 1500)
+    }, 0)
 
     return of(true);
   }

@@ -9,10 +9,10 @@
   <h3 class="fw-600">Ordering Takeout?</h3>
   <h1 class="fw-600" id="find-all-restaurants">Find all Restaurants <br> Get the best price</h1>
   <h3 class="fw-400" id="now-available-in-canada">Now available in Canada</h3>
-  <app-address-search (handleSearch)="this.handleSearch($event)"></app-address-search>
+  <app-address-search (handleSearch)="this.handleSearch($event)" ></app-address-search>
 </div>
 <hr class="w-100"/>
-<h2 class="fw-600">How the app works</h2>
+<h2 class="fw-600" #addressSearchComponent>How the app works</h2>
 <div class="instruction-container flex"
      *ngFor="let instruction of instructionsList; let index = index"
      [ngClass]="index % 2 == 0 ? 'flex-direction-normal' : 'flex-direction-reverse'"
@@ -26,5 +26,5 @@
 </div>
 <div id="landing-footer" class="flex flex-direction-column justify-content-center alight-items-center w-100">
   <h2 id="search-for-restaurants" class="fw-600 text-center white">Search for restaurants <br/> near you</h2>
-  <p-button label="Search Restaurants" ></p-button>
+  <p-button label="Search Restaurants" (onClick)="handleFooterCTAClick()" ></p-button>
 </div>

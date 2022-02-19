@@ -5,7 +5,7 @@ import {
   Component,
   ElementRef, EventEmitter,
   Input,
-  OnInit,
+  OnInit, Output,
   ViewChild
 } from '@angular/core';
 
@@ -18,20 +18,21 @@ export class SettingsComponent implements OnInit {
 
   constructor() { }
 
-  panelShown = false;
+  @Input() isPanelShown = false;
+  @Output() isPanelShownChange = new EventEmitter<boolean>();
 
   ngOnInit(): void {
   }
 
   openPanel() {
-    this.panelShown = true;
+    this.isPanelShownChange.emit(true);
   }
 
   closePanel() {
-    this.panelShown = false;
+    this.isPanelShownChange.emit(false);
   }
 
   restaurantSearch: string = ""
-  test: string[] = ["a", "b", "c", "d"]
+  test: string[] = ["Lowest Fees", "Fastest Delivery"]
   currentValue: number = 50;
 }

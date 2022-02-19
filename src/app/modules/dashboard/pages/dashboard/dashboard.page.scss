@@ -8,14 +8,14 @@
   align-items: flex-start;
 
   #search-restaurants-container {
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     justify-self: center;
     width: 100%;
 
     align-content: center;
   }
 
-  #setting-icons > span{
+  #setting-icons span{
     margin: 0 0.5rem;
   }
 
@@ -58,6 +58,7 @@
     align-items: center;
     #search-restaurants-container {
       width: 17rem;
+      margin: 0 auto;
     }
     #delivery-address {
       margin: 1.5rem 0 2rem 1.5rem;
@@ -81,7 +82,7 @@
     .p-dialog {
       max-height: unset;
       position: absolute;
-      top: 10%;
+      top: 5%;
 
       .p-dialog-content {
         padding: 0;
@@ -90,13 +91,19 @@
       }
     }
     .p-component-overlay {
-      overflow: scroll;
+      overflow-y: scroll;
     }
 
     @media only screen and (max-width : 890px) {
      .p-dialog-mask.p-component-overlay {
        padding: 0 3rem;
      }
+    }
+
+    @media only screen and (max-width : 430px) {
+      .p-dialog-mask.p-component-overlay {
+        padding: 0;
+      }
     }
   }
 }

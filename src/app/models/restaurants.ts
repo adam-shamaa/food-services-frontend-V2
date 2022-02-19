@@ -1,5 +1,6 @@
 export interface AggregatedServiceProviderRestaurants extends RestaurantMetadata{
   serviceProviders: ServiceProviderRestaurant[]
+  cheapestServiceProvider: string
 }
 
 export interface RestaurantMetadata {

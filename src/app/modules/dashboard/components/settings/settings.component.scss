@@ -1,6 +1,6 @@
 
 ::ng-deep {
-  #pr_id_2_label::before {
+  .p-dropdown-label::before {
     font-family: "Nunito Sans";
     content: "Sort Restaurants By: ";
     color: #2B2B43;
@@ -66,6 +66,7 @@
     margin-right: 1rem;
 
     width: 100%;
+    margin-bottom: 1rem;
   }
   .setting-container > h4 {
     margin: 0 0 1rem 0;
@@ -129,6 +130,7 @@
     }
     .setting-container {
       width: 300px;
+      margin-bottom: 0;
     }
   }
 }

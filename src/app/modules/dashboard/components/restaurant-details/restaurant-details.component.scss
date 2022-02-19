@@ -51,6 +51,24 @@
       color: #2B2B43;
       margin: 1rem 0;
     }
+    #best-deal-container {
+      /* Group 2 */
+      background: #FFE4BC;
+      border-radius: 10px;
+
+      /* Best Deal */
+      font-family: "Nunito Sans";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      align-items: center;
+
+      color: #000000;
+
+      padding: 0.1rem 0.5rem;
+
+      margin: 0 0.5rem;
+    }
     ::ng-deep {
       mat-button-toggle-group {
         background-color: #EFEFF0;
@@ -62,12 +80,10 @@
         border-radius: 0;
         background-color: #EFEFF0;
         padding: 0.2rem;
+        min-width: 12rem;
       }
       mat-button-toggle:hover, .mat-button-toggle-checked {
         background-color: white;
-      }
-      mat-button-toggle {
-        width: 10rem;
       }
       .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
         font-family: "Nunito Sans";
@@ -76,6 +92,10 @@
       }
       .mat-button-toggle-ripple, mat-button-toggle:hover, .mat-button-toggle-checked {
         border-radius: 6px;
+      }
+      .mat-button-toggle-label-content {
+        display: flex;
+        justify-content: center;
       }
     }
   }
@@ -182,6 +202,7 @@
         mat-button-toggle {
           width: 100%;
           text-align: center;
+          padding: 0.8rem 0;
         }
       }
     }

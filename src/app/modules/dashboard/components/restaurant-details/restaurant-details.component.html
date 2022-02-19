@@ -9,9 +9,12 @@
       <p class="meta-line">8.2 rating</p>
     </div>
     <div id="service-provider-select-container">
-      <mat-button-toggle-group name="serviceProvider" aria-label="Service Provider" (change)="handleServiceProviderChange($event)">
+      <mat-button-toggle-group [vertical]="isToggleGroupVertical" name="serviceProvider" aria-label="Service Provider" (change)="handleServiceProviderChange($event)" [value]="restaurant.cheapestServiceProvider">
         <mat-button-toggle *ngFor="let serviceProvider of this.restaurant.serviceProviders" [value]="serviceProvider.serviceProviderName" >
-          {{serviceProvider.serviceProviderName}}
+          <span>{{serviceProvider.serviceProviderName}}</span>
+          <div id="best-deal-container" *ngIf="restaurant.cheapestServiceProvider == serviceProvider.serviceProviderName">
+            <span>Best Deal</span>
+          </div>
         </mat-button-toggle>
       </mat-button-toggle-group>
     </div>

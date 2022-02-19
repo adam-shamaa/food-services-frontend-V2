@@ -1,4 +1,4 @@
-<p-card styleClass="p-card-shadow" *ngIf="restaurant; else skeletonLoader">
+<p-card styleClass="p-card-shadow" *ngIf="restaurant; else skeletonLoader" class="selectable">
   <ng-template pTemplate="header">
     <img [src]="restaurant.imageURL"/>
   </ng-template>

@@ -1,7 +1,16 @@
-import {ApplicationRef, ChangeDetectorRef, Component, NgZone, OnInit} from '@angular/core';
+import {
+  ApplicationRef,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  NgZone,
+  OnInit, QueryList,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import instructions from "./landing-instructions.json"
 import {RestaurantsService} from "../../../../services/restaurants/restaurants.service";
-import {Address} from "../../components/address-search/address-search.component";
+import {Address, AddressSearchComponent} from "../../components/address-search/address-search.component";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,12 +20,13 @@ import {Router} from "@angular/router";
 })
 export class LandingPage implements OnInit {
 
-  public instructionsList: {imageURL: string, titleSummary: string, title: string, titleDescription: string}[] = instructions;
+  @ViewChild(AddressSearchComponent) addressSearchComponent!: AddressSearchComponent;
+
+  instructionsList = instructions;
 
   constructor(private restaurantsService: RestaurantsService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
-
   }
 
   handleSearch(address: Address) {
@@ -26,4 +36,12 @@ export class LandingPage implements OnInit {
     })
   }
 
+  handleFooterCTAClick() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+    this.addressSearchComponent.searchField?.nativeElement.focus({preventScroll: true});
+  }
 }

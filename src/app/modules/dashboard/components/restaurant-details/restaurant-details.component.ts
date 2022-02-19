@@ -11,10 +11,12 @@ export class RestaurantDetailsComponent implements OnInit, OnChanges {
 
   @Input() restaurant: AggregatedServiceProviderRestaurants | null = null;
   selectedServiceProvider?: ServiceProviderRestaurant;
+  isToggleGroupVertical = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize({target: { innerWidth: window.innerWidth } } );
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -25,6 +27,11 @@ export class RestaurantDetailsComponent implements OnInit, OnChanges {
 
   handleServiceProviderChange(buttonChange: MatButtonToggleChange) {
     this.selectedServiceProvider = this.restaurant!.serviceProviders.filter(serviceProvider => serviceProvider.serviceProviderName == buttonChange.value)[0]
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: any; }; }) {
+    this.isToggleGroupVertical = event.target.innerWidth < 890;
   }
 
 }
