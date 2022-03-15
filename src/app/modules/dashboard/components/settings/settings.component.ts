@@ -1,28 +1,17 @@
-import {
-  AfterContentInit,
-  AfterViewChecked,
-  AfterViewInit,
-  Component,
-  ElementRef, EventEmitter,
-  Input,
-  OnInit, Output,
-  ViewChild
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  styleUrls: ['./settings.component.scss'],
 })
-export class SettingsComponent implements OnInit {
-
-  constructor() { }
+export class SettingsComponent {
+  constructor() {
+    // empty constructor
+  }
 
   @Input() isPanelShown = false;
   @Output() isPanelShownChange = new EventEmitter<boolean>();
-
-  ngOnInit(): void {
-  }
 
   openPanel() {
     this.isPanelShownChange.emit(true);
@@ -32,7 +21,5 @@ export class SettingsComponent implements OnInit {
     this.isPanelShownChange.emit(false);
   }
 
-  restaurantSearch: string = ""
-  test: string[] = ["Lowest Fees", "Fastest Delivery"]
   currentValue: number = 50;
 }

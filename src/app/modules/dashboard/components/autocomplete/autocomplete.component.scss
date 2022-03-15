@@ -1,7 +1,8 @@
-$input-background-color: #EDEEF2;
+$input-background-color: #edeef2;
 
 ::ng-deep {
-  .p-inputgroup > i, input {
+  .p-inputgroup > i,
+  input {
     background: $input-background-color;
   }
 
@@ -10,29 +11,52 @@ $input-background-color: #EDEEF2;
   }
 
   .p-inputgroup > i {
-    background-color: #EDEEF2;
+    background-color: #edeef2;
     border: none !important;
   }
 
-  .p-inputgroup p-autocomplete  {
+  .p-inputgroup p-autocomplete {
     .p-component {
       min-width: 100%;
     }
 
-    input {
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+    }
+
+    .link {
+      color: rgb(18, 95, 202);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .p-autocomplete-panel
+      .p-autocomplete-items:not(.p-autocomplete-virtualscroll) {
+      padding: 0;
+    }
+
+    input,
+    span,
+    a,
+    .p-autocomplete-empty-message {
       font-family: "Nunito Sans";
       font-size: 14px;
+    }
+
+    input {
       font-weight: 300;
-      color: #83859C;
+      color: #83859c;
       opacity: 100%;
 
       width: 100%;
-      background: #EDEEF2;
+      background: #edeef2;
       border: none;
     }
 
     input::placeholder {
-      color: #83859C;
+      color: #83859c;
       opacity: 100%;
     }
   }

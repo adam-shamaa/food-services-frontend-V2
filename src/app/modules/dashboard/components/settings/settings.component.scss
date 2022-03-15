@@ -1,9 +1,8 @@
-
 ::ng-deep {
   .p-dropdown-label::before {
     font-family: "Nunito Sans";
     content: "Sort Restaurants By: ";
-    color: #2B2B43;
+    color: #2b2b43;
   }
 }
 
@@ -22,6 +21,8 @@
     position: fixed;
     left: 0;
     bottom: 0;
+
+    z-index: 1;
   }
 
   #setting-toggles {
@@ -32,7 +33,7 @@
 
   #hide-settings {
     margin-bottom: 1rem;
-    color: #8B8B8F;
+    color: #8b8b8f;
 
     @media only screen and (max-width: 960px) {
       width: 100%;
@@ -55,12 +56,12 @@
 
   .setting-container {
     font-family: "Nunito Sans";
-    color: #2B2B43;
+    color: #2b2b43;
 
     padding: 1rem;
 
-    background: #FFFFFF;
-    border: 1px solid #DEDFE1;
+    background: #ffffff;
+    border: 1px solid #dedfe1;
     border-radius: 10px;
 
     margin-right: 1rem;
@@ -75,7 +76,7 @@
 
   hr {
     border: 0;
-    border-bottom: 1px solid #EDEEF2;
+    border-bottom: 1px solid #edeef2;
     margin: 1rem 0 1rem 0;
     width: 100%;
   }
@@ -92,28 +93,29 @@
       top: -2.8rem;
       left: -0.7rem;
       position: relative;
-      background-color: #3C4257;
+      background-color: #3c4257;
       padding: 0.5rem;
-      color: #E3E8EE;
+      color: #e3e8ee;
       border-radius: 4px;
-      box-shadow: 0px 1px 2px rgba(55, 65, 81, 0.06), 0px 1px 3px rgba(55, 65, 81, 0.1);
+      box-shadow: 0px 1px 2px rgba(55, 65, 81, 0.06),
+        0px 1px 3px rgba(55, 65, 81, 0.1);
       font-weight: 600;
     }
     .p-dropdown .p-dropdown-label.p-placeholder {
       font-family: "Nunito Sans";
-      color: #2B2B43;
+      color: #2b2b43;
     }
 
     #pr_id_2_label {
       font-family: "Nunito Sans";
-      color: #8789A1;
+      color: #8789a1;
     }
     .p-dropdown {
       width: 100%;
     }
   }
 
-  @media only screen and (min-width : 960px) {
+  @media only screen and (min-width: 960px) {
     #settings-container {
       flex-direction: column-reverse;
       border-radius: 16px;

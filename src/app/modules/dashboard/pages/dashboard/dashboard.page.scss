@@ -1,4 +1,16 @@
+:host {
+  display: block;
+}
+
 // NAV
+#nav-container {
+  background: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
 #nav {
   font-family: "Nunito Sans";
   display: flex;
@@ -15,7 +27,7 @@
     align-content: center;
   }
 
-  #setting-icons span{
+  #setting-icons span {
     margin: 0 0.5rem;
   }
 
@@ -33,7 +45,7 @@
   }
 
   #setting-icons {
-    @media only screen and (max-width : 960px) {
+    @media only screen and (max-width: 960px) {
       position: fixed;
       bottom: 2rem;
       background: #616161;
@@ -48,12 +60,12 @@
       font-family: "Nunito Sans";
       font-size: 15px;
 
-      color: #FFFFFF;
+      color: #ffffff;
     }
+    z-index: 1;
   }
 
-
-  @media only screen and (min-width : 630px) {
+  @media only screen and (min-width: 630px) {
     flex-direction: row;
     align-items: center;
     #search-restaurants-container {
@@ -67,7 +79,6 @@
       max-width: 33.333%;
       width: 33.33%;
     }
-
   }
 
   @media only screen and (min-width: 960px) {
@@ -94,13 +105,13 @@
       overflow-y: scroll;
     }
 
-    @media only screen and (max-width : 890px) {
-     .p-dialog-mask.p-component-overlay {
-       padding: 0 3rem;
-     }
+    @media only screen and (max-width: 890px) {
+      .p-dialog-mask.p-component-overlay {
+        padding: 0 3rem;
+      }
     }
 
-    @media only screen and (max-width : 430px) {
+    @media only screen and (max-width: 430px) {
       .p-dialog-mask.p-component-overlay {
         padding: 0;
       }
@@ -110,7 +121,7 @@
 
 hr {
   border: 0;
-  border-bottom: 1px solid #EDEEF2;
+  border-bottom: 1px solid #edeef2;
   margin: 0 0 1rem 0;
 }
 
@@ -124,16 +135,16 @@ hr {
     margin: 1rem 0;
   }
 
-  @media only screen and (min-width : 600px) {
+  @media only screen and (min-width: 600px) {
     app-restaurant-preview {
-      flex: 0 0 calc(50% - 8rem/3);
+      flex: 0 0 calc(50% - 8rem / 3);
       margin: 1rem 1rem;
     }
   }
 
-  @media only screen and (min-width : 960px) {
+  @media only screen and (min-width: 960px) {
     app-restaurant-preview {
-      flex: 0 0 calc(33.333% - 8rem/3);
+      flex: 0 0 calc(33.333% - 8rem / 3);
     }
   }
 }

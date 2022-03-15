@@ -1,30 +1,44 @@
 <div id="nav" class="flex w-100">
-  <img
-    src="./../../../../../assets/img/mock-logo.svg"
-    alt=""
-    width="178"
-  />
+  <img src="./../../../../../assets/img/mock-logo.svg" alt="" width="178" />
 </div>
-<div id="landing-header" class="white flex flex-direction-column justify-content-center alight-items-center text-center w-100">
-  <h3 class="fw-600">Ordering Takeout?</h3>
-  <h1 class="fw-600" id="find-all-restaurants">Find all Restaurants <br> Get the best price</h1>
-  <h3 class="fw-400" id="now-available-in-canada">Now available in Canada</h3>
-  <app-address-search (handleSearch)="this.handleSearch($event)" ></app-address-search>
-</div>
-<hr class="w-100"/>
-<h2 class="fw-600" #addressSearchComponent>How the app works</h2>
-<div class="instruction-container flex"
-     *ngFor="let instruction of instructionsList; let index = index"
-     [ngClass]="index % 2 == 0 ? 'flex-direction-normal' : 'flex-direction-reverse'"
+<div
+  id="landing-header"
+  class="white flex flex-direction-column justify-content-center alight-items-center text-center w-100"
 >
-  <img [src]="instruction.imageURL"/>
-  <div class="instruction-text flex flex-direction-column" >
+  <h3 class="fw-600">Ordering Takeout?</h3>
+  <h1 class="fw-600" id="find-all-restaurants">
+    Find all Restaurants <br />
+    Get the best price
+  </h1>
+  <h3 class="fw-400" id="now-available-in-canada">Now available in Canada</h3>
+  <app-address-search
+    (handleSearch)="this.handleSearch($event)"
+  ></app-address-search>
+</div>
+<hr class="w-100" />
+<h2 class="fw-600" #addressSearchComponent>How the app works</h2>
+<div
+  class="instruction-container flex"
+  *ngFor="let instruction of instructionsList; let index = index"
+  [ngClass]="index % 2 == 0 ? 'flex-direction-normal' : 'flex-direction-reverse'"
+>
+  <img [src]="instruction.imageURL" />
+  <div class="instruction-text flex flex-direction-column">
     <h3 class="purple">{{instruction.titleSummary}}</h3>
     <h2 class="dark-purple">{{instruction.title}}</h2>
     <h4 class="fw-500 grey">{{instruction.titleDescription}}</h4>
   </div>
 </div>
-<div id="landing-footer" class="flex flex-direction-column justify-content-center alight-items-center w-100">
-  <h2 id="search-for-restaurants" class="fw-600 text-center white">Search for restaurants <br/> near you</h2>
-  <p-button label="Search Restaurants" (onClick)="handleFooterCTAClick()" ></p-button>
+<div
+  id="landing-footer"
+  class="flex flex-direction-column justify-content-center alight-items-center w-100"
+>
+  <h2 id="search-for-restaurants" class="fw-600 text-center white">
+    Search for restaurants <br />
+    near you
+  </h2>
+  <p-button
+    label="Search Restaurants"
+    (onClick)="handleFooterCTAClick()"
+  ></p-button>
 </div>

@@ -1,25 +1,39 @@
 ::ng-deep {
+  p-skeleton {
+    z-index: -1;
+  }
+
   .p-element {
+    .p-card-header {
+      height: 10rem;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
     .p-card {
-      background: #FFFFFF;
+      background: #ffffff;
 
       border-radius: 16px;
-      border: 1px solid #EDEEF2;
+      border: 1px solid #edeef2;
       box-shadow: none;
-
 
       font-family: "Nunito Sans";
       font-size: 12px;
 
       overflow: hidden;
     }
-    .p-card-body, .p-card-content, .p-card-footer {
+    .p-card-body,
+    .p-card-content,
+    .p-card-footer {
       padding: 0;
     }
     .p-card-body {
-      padding: 0.4rem 0.6rem;
+      padding: 0.6rem 0.8rem;
     }
-    .p-card-content > *, {
+    .p-card-content > * {
       margin: 0.5rem 0;
     }
 
@@ -29,6 +43,10 @@
 
     .p-skeleton-margin {
       margin: 0.5rem 0;
+    }
+
+    .z-index-zero {
+      z-index: 0;
     }
   }
 }
@@ -43,7 +61,7 @@
     padding-right: 0.3rem;
   }
 
-  color: #83859C;
+  color: #83859c;
 
   font-weight: 400;
   font-size: 1em;
@@ -54,7 +72,7 @@
 
 .pill-button {
   color: #545563;
-  background: #EDEEF2;
+  background: #edeef2;
 
   border: none;
   border-radius: 100px;

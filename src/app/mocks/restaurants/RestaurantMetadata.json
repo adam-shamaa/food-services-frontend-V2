@@ -1,25 +1,30 @@
-[{
-  "id": "1",
-  "name": "Royal Sushi House",
-  "imageURL": "./assets/img/sushi-preview-img.png",
-  "rating": 8.2,
-  "estimatedDeliveryTime": [20, 30]
-}, {
-  "id": "2",
-  "name": "Royal Sushi House",
-  "imageURL": "./assets/img/sushi-preview-img.png",
-  "rating": 8.2,
-  "estimatedDeliveryTime": [20, 30]
-}, {
-  "id": "3",
-  "name": "Royal Sushi House",
-  "imageURL": "./assets/img/sushi-preview-img.png",
-  "rating": 8.2,
-  "estimatedDeliveryTime": [20, 30]
-}, {
-  "id": "4",
-  "name": "Royal Sushi House",
-  "imageURL": "./assets/img/sushi-preview-img.png",
-  "rating": 8.2,
-  "estimatedDeliveryTime": [20, 30]
-}]
+[
+  {
+    "id": "1",
+    "name": "Royal Sushi House",
+    "imageURL": "./assets/img/sushi-preview-img.png",
+    "rating": 8.2,
+    "estimatedDeliveryTime": [20, 30]
+  },
+  {
+    "id": "2",
+    "name": "Royal Sushi House",
+    "imageURL": "./assets/img/sushi-preview-img.png",
+    "rating": 8.2,
+    "estimatedDeliveryTime": [20, 30]
+  },
+  {
+    "id": "3",
+    "name": "Royal Sushi House",
+    "imageURL": "./assets/img/sushi-preview-img.png",
+    "rating": 8.2,
+    "estimatedDeliveryTime": [20, 30]
+  },
+  {
+    "id": "4",
+    "name": "Royal Sushi House",
+    "imageURL": "./assets/img/sushi-preview-img.png",
+    "rating": 8.2,
+    "estimatedDeliveryTime": [20, 30]
+  }
+]

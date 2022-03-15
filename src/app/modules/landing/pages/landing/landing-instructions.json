@@ -1,16 +1,20 @@
-[{
-  "imageURL": "./../../../../../assets/img/photo-placeholder.png",
-  "titleSummary": "Enter an Address",
-  "title": "Enter an address to get started",
-  "titleDescription": "We value your privacy, your address is never stored by us!"
-}, {
-  "imageURL": "./../../../../../assets/img/photo-placeholder.png",
-  "titleSummary": "Explore varieties",
-  "title": "Shop for your favorite restaurants",
-  "titleDescription": "Shop for your favorite restaurants from all compatible delivery services"
-}, {
-  "imageURL": "./../../../../../assets/img/photo-placeholder.png",
-  "titleSummary": "Checkout",
-  "title": "Find your favorite restaurant",
-  "titleDescription": "We’ll redirect you to the cheapest delivery service where you can complete your order"
-}]
+[
+  {
+    "imageURL": "./../../../../../assets/img/photo-placeholder.png",
+    "titleSummary": "Enter an Address",
+    "title": "Enter an address to get started",
+    "titleDescription": "We value your privacy, your address is never stored by us!"
+  },
+  {
+    "imageURL": "./../../../../../assets/img/photo-placeholder.png",
+    "titleSummary": "Explore varieties",
+    "title": "Shop for your favorite restaurants",
+    "titleDescription": "Shop for your favorite restaurants from all compatible delivery services"
+  },
+  {
+    "imageURL": "./../../../../../assets/img/photo-placeholder.png",
+    "titleSummary": "Checkout",
+    "title": "Find your favorite restaurant",
+    "titleDescription": "We’ll redirect you to the cheapest delivery service where you can complete your order"
+  }
+]

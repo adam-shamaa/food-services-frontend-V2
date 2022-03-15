@@ -7,123 +7,165 @@
   "serviceProviders": [
     {
       "serviceProviderName": "SkipTheDishes!",
-      "fees": [{
-        "name": "Delivery",
-        "amountCents": 0
-      }, {
-        "name": "Service",
-        "amountCents": 0
-      }, {
-        "name": "Service",
-        "amountCents": 0
-      }],
-      "menu": [{
-        "categoryName": "12-inch Sub",
-        "categoryItems": [{
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "SkipTheDishes Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }]
-      }]
-    }, {
+      "fees": [
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        },
+        {
+          "name": "Service",
+          "amountCents": 0
+        },
+        {
+          "name": "Service",
+          "amountCents": 0
+        }
+      ],
+      "menu": [
+        {
+          "categoryName": "12-inch Sub",
+          "categoryItems": [
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "SkipTheDishes Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "serviceProviderName": "UberEats",
-      "fees": [{
-        "name": "Delivery",
-        "amountCents": 0
-      }, {
-        "name": "Delivery",
-        "amountCents": 0
-      }, {
-        "name": "Delivery",
-        "amountCents": 0
-      }],
-      "menu": [{
-        "categoryName": "12-inch Sub",
-        "categoryItems": [{
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Ubereats Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }]
-      }]
-    }, {
+      "fees": [
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        },
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        },
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        }
+      ],
+      "menu": [
+        {
+          "categoryName": "12-inch Sub",
+          "categoryItems": [
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Ubereats Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "serviceProviderName": "Doordash",
-      "fees": [{
-        "name": "Delivery",
-        "amountCents": 0
-      }, {
-        "name": "Delivery",
-        "amountCents": 0
-      }, {
-        "name": "Delivery",
-        "amountCents": 0
-      }],
-      "menu": [{
-        "categoryName": "12-inch Sub",
-        "categoryItems": [{
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }, {
-          "name": "Doordash Footlong Veggies",
-          "amountCents": 499,
-          "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
-        }]
-      }]
-    }]
+      "fees": [
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        },
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        },
+        {
+          "name": "Delivery",
+          "amountCents": 0
+        }
+      ],
+      "menu": [
+        {
+          "categoryName": "12-inch Sub",
+          "categoryItems": [
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            },
+            {
+              "name": "Doordash Footlong Veggies",
+              "amountCents": 499,
+              "description": "Crispy, crunchy and classically delicious. The Veggie Delite® is proof that a veggie sandwich can be high in flavor. Try a delicious combination of lettuce, tomatoes, green peppers, cucumbers and onions. Customize it with your choice of condiments on the bread of your choice"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

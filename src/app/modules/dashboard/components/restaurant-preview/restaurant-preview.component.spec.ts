@@ -8,9 +8,8 @@ describe('RestaurantPreviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RestaurantPreviewComponent ]
-    })
-    .compileComponents();
+      declarations: [RestaurantPreviewComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

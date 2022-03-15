@@ -5,18 +5,26 @@
       <div class="selectable disable-text-select" (click)="this.closePanel()">
         <i class="pi pi-times"></i>
       </div>
-      <div style="display: flex; justify-content: center; width: 100%;">
+      <div style="display: flex; justify-content: center; width: 100%">
         <span>Settings</span>
       </div>
     </div>
-    <hr/>
+    <hr />
     <div id="estimated-subtotal-container" class="setting-container">
       <h4>Estimated Subtotal Cost:</h4>
       <p-slider [(ngModel)]="this.currentValue" data-before="test"></p-slider>
     </div>
+    <!--
     <div>
-      <p-dropdown style="min-width: 100%;" [options]="test" [(ngModel)]="restaurantSearch"  ></p-dropdown>
+      <p-dropdown style="min-width: 100%;" [options]="filterByOptions" [(ngModel)]="currentFilterSetting" ></p-dropdown>
     </div>
+    !-->
   </div>
-  <div id="hide-settings" (click)="this.closePanel()" class="selectable disable-text-select"><span>Hide Settings</span></div>
+  <div
+    id="hide-settings"
+    (click)="this.closePanel()"
+    class="selectable disable-text-select"
+  >
+    <span>Hide Settings</span>
+  </div>
 </div>

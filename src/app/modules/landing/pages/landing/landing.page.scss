@@ -1,23 +1,23 @@
 :host {
-  font-family: "Nunito Sans";;
+  font-family: "Nunito Sans";
 
   /* Custom, iPhone Retina */
-  @media only screen and (min-width : 320px) {
+  @media only screen and (min-width: 320px) {
     font-size: 14px;
   }
 
   /* Extra Small Devices, Phones */
-  @media only screen and (min-width : 480px) {
+  @media only screen and (min-width: 480px) {
     font-size: 16px;
   }
 
   /* Small Devices, Tablets */
-  @media only screen and (min-width : 768px) {
+  @media only screen and (min-width: 768px) {
     font-size: 18px;
   }
 
   /* Medium Devices, Desktops */
-  @media only screen and (min-width : 992px) {
+  @media only screen and (min-width: 992px) {
     font-size: 20px;
   }
 }
@@ -33,7 +33,7 @@
   padding-left: 3rem;
 
   img {
-    width: 9rem
+    width: 9rem;
   }
 }
 
@@ -42,12 +42,12 @@ app-address-search {
   padding: 0 1rem;
 
   ::ng-deep {
-    input, input::placeholder {
+    input,
+    input::placeholder {
       font-weight: 400;
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
-
 }
 
 #landing-header {
@@ -63,13 +63,12 @@ app-address-search {
 }
 
 hr {
-  border: 2px solid #E4E4E4;
+  border: 2px solid #e4e4e4;
 
   max-width: 884px;
 
   margin: 3rem auto;
 }
-
 
 .instruction-container {
   margin: 6.5rem 0;
@@ -111,19 +110,18 @@ hr {
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px) {
+@media only screen and (min-width: 480px) {
   app-address-search {
-    max-width: 480px
+    max-width: 480px;
   }
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
+@media only screen and (min-width: 768px) {
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width: 992px) {
   #landing-header > app-address-search {
     max-width: 800px;
     margin: 3rem 0;
@@ -139,6 +137,5 @@ hr {
 }
 
 /* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
+@media only screen and (min-width: 1200px) {
 }
