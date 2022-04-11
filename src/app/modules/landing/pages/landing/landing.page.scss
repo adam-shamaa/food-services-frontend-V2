@@ -75,6 +75,7 @@ hr {
 
   img {
     max-width: 30rem;
+    object-fit: contain;
   }
 
   .instruction-text {
@@ -83,11 +84,11 @@ hr {
   }
 }
 
-.flex-direction-normal {
+.instruction-container:nth-child(even) {
   flex-direction: column;
 }
 
-.flex-direction-reverse {
+.instruction-container:nth-child(odd) {
   flex-direction: column-reverse;
 }
 
@@ -127,11 +128,11 @@ hr {
     margin: 3rem 0;
   }
 
-  .flex-direction-normal {
+  .instruction-container:nth-child(even) {
     flex-direction: row;
   }
 
-  .flex-direction-reverse {
+  .instruction-container:nth-child(odd) {
     flex-direction: row-reverse;
   }
 }

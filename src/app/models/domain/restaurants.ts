@@ -1,13 +1,12 @@
-export interface AggregatedServiceProviderRestaurants {
-  id: string;
+export interface RestaurantDetails {
   name: string;
   imageUrl: string;
-  rating: number;
+  formattedAddress: string;
+  averageRating: number;
   minEstimatedDeliveryTime: number;
   maxEstimatedDeliveryTime: number;
-  serviceProviders: ServiceProviderRestaurant[];
-  cheapestServiceProvider: string;
-  formattedAddress: string;
+  serviceProviders: string;
+  menu: MenuCategory[];
 }
 
 export interface RestaurantSummary {
@@ -19,13 +18,18 @@ export interface RestaurantSummary {
   maxEstimatedDeliveryTime: number;
 }
 
+export interface ServiceProviders {
+  serviceProviders: ServiceProviderRestaurant[];
+  cheapestServiceProvider: string;
+}
+
 export interface ServiceProviderRestaurant {
-  serviceProviderName: string;
   minEstimatedDeliveryTime: number;
   maxEstimatedDeliveryTime: number;
+  rating: number;
   redirectUrl?: string;
+  serviceProviderName: string;
   fees: Fee[];
-  menu: MenuCategory[];
 }
 
 export interface Fee {

@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { Address } from '../../models/domain/address';
 import { mapper } from '../../models/mapper';
 import {
-  AddressRequest,
-  DetailedRestaurantResponse,
-  SummaryRestaurantResponse,
+  AddressRequestDto,
+  RestaurantDetailsResponseDto,
+  RestaurantSummarysResponseDto,
+  RestaurantSummaryDto,
+  RestaurantDetailsDto,
+  RestaurantServiceProvidersResponseDto,
 } from '@adam-shamaa/food-services-spec';
 import {
-  AggregatedServiceProviderRestaurants,
+  RestaurantDetails,
   RestaurantSummary,
+  ServiceProviders,
 } from '../../models/domain/restaurants';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -25,9 +29,9 @@ export class RestaurantsFacade {
     return this.httpClient
       .post(
         this.baseUrl + '/address',
-        mapper.map<Address, AddressRequest>(
+        mapper.map<Address, AddressRequestDto>(
           address,
-          'AddressRequest',
+          'AddressRequestDto',
           'Address'
         ),
         { observe: 'response', withCredentials: true }
@@ -37,52 +41,78 @@ export class RestaurantsFacade {
 
   getRestaurants(searchQuery: string): Observable<RestaurantSummary[]> {
     return this.httpClient
-      .get<SummaryRestaurantResponse[]>(this.baseUrl + '/restaurants', {
+      .get<RestaurantSummarysResponseDto>(this.baseUrl + '/restaurants', {
         observe: 'response',
         withCredentials: true,
         params: { searchQuery: searchQuery },
       })
       .pipe(
         map((response) => response.body),
-        map((list) =>
-          list!.map((res) => {
-            return mapper.map<SummaryRestaurantResponse, RestaurantSummary>(
-              res,
-              'RestaurantSummary',
-              'SummaryRestaurantResponse'
-            );
-          })
-        ),
         map((res) => {
-          return res;
+          return res!.availableRestaurants!.map((restaurant) =>
+            mapper.map<RestaurantSummaryDto, RestaurantSummary>(
+              restaurant,
+              'RestaurantSummary',
+              'RestaurantSummaryDto'
+            )
+          );
         })
       );
   }
 
-  getRestaurantDetails(
-    restaurantId: string
-  ): Observable<AggregatedServiceProviderRestaurants> {
+  getRestaurantDetails(restaurantId: string): Observable<RestaurantDetails> {
     return this.httpClient
-      .get<DetailedRestaurantResponse>(
+      .get<RestaurantDetailsResponseDto>(
         this.baseUrl + '/restaurants/' + restaurantId,
         {
           observe: 'response',
           withCredentials: true,
-          params: { subtotalCents: 1000 },
         }
       )
       .pipe(
         map((response) => response.body),
         map((responseBody) => {
-          console.log(responseBody);
+          return mapper.map<RestaurantDetailsDto, RestaurantDetails>(
+            responseBody!.restaurantDetails!,
+            'RestaurantDetails',
+            'RestaurantDetailsDto'
+          );
+        }),
+        map((res) => {
+          console.log(res);
+          return res;
+        })
+      );
+  }
+
+  getServiceProviders(
+    restaurantId: string,
+    subtotal: number
+  ): Observable<ServiceProviders> {
+    return this.httpClient
+      .get<RestaurantServiceProvidersResponseDto>(
+        this.baseUrl + '/restaurants/' + restaurantId + '/service-providers',
+        {
+          observe: 'response',
+          withCredentials: true,
+          params: { subtotalCents: subtotal },
+        }
+      )
+      .pipe(
+        map((response) => response.body),
+        map((responseBody) => {
           return mapper.map<
-            DetailedRestaurantResponse,
-            AggregatedServiceProviderRestaurants
+            RestaurantServiceProvidersResponseDto,
+            ServiceProviders
           >(
             responseBody!,
-            'AggregatedServiceProviderRestaurants',
-            'DetailedRestaurantResponse'
+            'ServiceProviders',
+            'RestaurantServiceProvidersResponseDto'
           );
+        }),
+        map((res) => {
+          console.log(res);
+          return res;
         })
       );
   }

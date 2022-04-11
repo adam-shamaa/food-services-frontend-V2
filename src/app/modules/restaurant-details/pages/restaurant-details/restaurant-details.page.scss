@@ -5,6 +5,7 @@
   background: white;
   top: 0;
 }
+
 .nav-bar {
   font-family: "Nunito Sans";
   display: flex;
@@ -103,6 +104,7 @@ li.active > a {
 
   .image-banner {
     height: 20rem;
+
     img {
       height: 100%;
       width: 100%;
@@ -155,6 +157,7 @@ li.active > a {
         color: #2b2b43;
         margin: 1rem 0;
       }
+
       #best-deal-container {
         /* Group 2 */
         background: #ffe4bc;
@@ -173,34 +176,42 @@ li.active > a {
 
         margin: 0 0.5rem;
       }
+
       ::ng-deep {
         mat-button-toggle-group {
           background-color: #efeff0;
           padding: 0.4rem;
           border-radius: 15px;
           border: none;
+          max-width: 100%;
+          display: flex;
         }
+
         mat-button-toggle {
           border-radius: 0;
           background-color: #efeff0;
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0;
           border: none;
         }
+
         mat-button-toggle:hover,
         .mat-button-toggle-checked {
           background-color: white;
         }
+
         .mat-button-toggle-appearance-standard
-          .mat-button-toggle-label-content {
+        .mat-button-toggle-label-content {
           font-family: "Nunito Sans";
           font-size: 15px;
           line-height: 20px;
         }
+
         .mat-button-toggle-ripple,
         mat-button-toggle:hover,
         .mat-button-toggle-checked {
           border-radius: 10px;
         }
+
         .mat-button-toggle-label-content {
           display: flex;
           justify-content: center;
@@ -258,6 +269,14 @@ li.active > a {
         margin-left: 2rem;
         border-radius: 1rem;
         padding: 1rem;
+
+        .app-settings-container {
+          margin-bottom: 3rem;
+        }
+
+        hr {
+          margin: 0.5rem 0;
+        }
       }
 
       .restaurants-details-section {
@@ -284,10 +303,12 @@ li.active > a {
           border-radius: 5px;
           padding: 1rem;
           margin: 1rem 0;
+
           .menu-item-header {
             margin-bottom: 1rem;
             display: flex;
             justify-content: space-between;
+
             span {
               font-family: "Nunito Sans";
               font-size: 14px;
@@ -295,12 +316,14 @@ li.active > a {
               font-weight: 700;
             }
           }
+
           .menu-item-body > span {
             font-family: "Nunito Sans";
             font-weight: 500;
             font-size: 14px;
             color: #8f8f8f;
           }
+
           .menu-item-footer {
             margin-top: 1rem;
             display: flex;
@@ -318,6 +341,7 @@ li.active > a {
         .fee-line {
           display: flex;
           justify-content: space-between;
+
           p {
             font-family: "Nunito Sans";
             font-weight: 500;
@@ -361,10 +385,6 @@ li.active > a {
   }
   .container > .content-container {
     width: unset;
-
-    #service-provider-select-container {
-      margin: 0;
-    }
 
     .restaurant-details-info {
       .menu-appendix-section {
@@ -422,11 +442,17 @@ li.active > a {
 
       .fees-section {
         width: 100%;
+        max-width: 35rem;
+        margin: 0 auto;
       }
 
       .fees-container {
         padding: 0 1rem;
         margin: 2rem 0;
+
+        .app-settings-container {
+          margin-bottom: 1rem;
+        }
       }
 
       .restaurants-details-section {
@@ -439,6 +465,7 @@ li.active > a {
         mat-button-toggle-group {
           width: 100%;
         }
+
         mat-button-toggle {
           width: 100%;
           text-align: center;

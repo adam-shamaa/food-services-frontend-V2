@@ -12,10 +12,14 @@ import { SliderModule } from 'primeng/slider';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { RestaurantDetailsPage } from './pages/restaurant-details/restaurant-details/restaurant-details.page';
+import { RestaurantDetailsPage } from './pages/restaurant-details/restaurant-details.page';
+import { DashboardModule } from '../dashboard/dashboard.module';
+import { AppModule } from '../../app.module';
+import { SumPipe } from '../../services/restaurants/sum.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [ConvertCurrencyUnitsPipe, RestaurantDetailsPage],
+  declarations: [ConvertCurrencyUnitsPipe, RestaurantDetailsPage, SumPipe],
   imports: [
     CommonModule,
     ButtonModule,
@@ -30,6 +34,8 @@ import { RestaurantDetailsPage } from './pages/restaurant-details/restaurant-det
     DialogModule,
     SkeletonModule,
     InfiniteScrollModule,
+    DashboardModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class RestaurantDetailsModule {}

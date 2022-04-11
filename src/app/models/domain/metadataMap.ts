@@ -1,11 +1,12 @@
 import { createMetadataMap } from '@automapper/pojos';
 import {
-  AggregatedServiceProviderRestaurants,
+  RestaurantDetails,
   Fee,
   MenuCategory,
   MenuCategoryItem,
   RestaurantSummary,
   ServiceProviderRestaurant,
+  ServiceProviders,
 } from './restaurants';
 import { Address } from './address';
 
@@ -21,20 +22,16 @@ export const initializeDomainMetadataMaps = () => {
     longitude: Number,
   });
 
-  createMetadataMap<AggregatedServiceProviderRestaurants>(
-    'AggregatedServiceProviderRestaurants',
-    {
-      id: String,
-      name: String,
-      imageUrl: String,
-      rating: String,
-      minEstimatedDeliveryTime: Number,
-      maxEstimatedDeliveryTime: Number,
-      serviceProviders: 'ServiceProviderRestaurant',
-      cheapestServiceProvider: String,
-      formattedAddress: String,
-    }
-  );
+  createMetadataMap<RestaurantDetails>('RestaurantDetails', {
+    name: String,
+    imageUrl: String,
+    formattedAddress: String,
+    averageRating: String,
+    minEstimatedDeliveryTime: Number,
+    maxEstimatedDeliveryTime: Number,
+    serviceProviders: String,
+    menu: 'MenuCategory',
+  });
 
   createMetadataMap<RestaurantSummary>('RestaurantSummary', {
     id: String,
@@ -45,13 +42,18 @@ export const initializeDomainMetadataMaps = () => {
     maxEstimatedDeliveryTime: Number,
   });
 
+  createMetadataMap<ServiceProviders>('ServiceProviders', {
+    serviceProviders: 'ServiceProviderRestaurant',
+    cheapestServiceProvider: String,
+  });
+
   createMetadataMap<ServiceProviderRestaurant>('ServiceProviderRestaurant', {
     serviceProviderName: String,
     minEstimatedDeliveryTime: Number,
     maxEstimatedDeliveryTime: Number,
     redirectUrl: String,
+    rating: Number,
     fees: 'Fee',
-    menu: 'MenuCategory',
   });
 
   createMetadataMap<Fee>('Fee', {

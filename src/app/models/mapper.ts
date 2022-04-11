@@ -1,21 +1,25 @@
-import { createMapper } from '@automapper/core';
+import { createMapper, mapFrom } from '@automapper/core';
 import { pojos } from '@automapper/pojos';
 import {
-  AggregatedServiceProviderRestaurants,
+  RestaurantDetails,
   Fee,
   MenuCategory,
   MenuCategoryItem,
   RestaurantSummary,
   ServiceProviderRestaurant,
+  ServiceProviders,
 } from './domain/restaurants';
 import {
-  AddressRequest,
-  DetailedRestaurantResponse,
-  ServiceProviderRestaurantResponse,
-  FeeResponse,
-  MenuCategoryResponse,
-  MenuItemResponse,
-  SummaryRestaurantResponse,
+  AddressRequestDto,
+  FeeDto,
+  MenuCategoryDto,
+  MenuItemDto,
+  RestaurantDetailsDto,
+  RestaurantSummaryDto,
+  RestaurantSummarysResponseDto,
+  AddressDto,
+  RestaurantServiceProviderDto,
+  RestaurantServiceProvidersResponseDto,
 } from '@adam-shamaa/food-services-spec';
 import { Address } from './domain/address';
 
@@ -25,26 +29,55 @@ export const mapper = createMapper({
 });
 
 export function initializeMappers() {
-  mapper.createMap<
-    DetailedRestaurantResponse,
-    AggregatedServiceProviderRestaurants
-  >('DetailedRestaurantResponse', 'AggregatedServiceProviderRestaurants');
-  mapper.createMap<Address, AddressRequest>('Address', 'AddressRequest');
-  mapper.createMap<FeeResponse, Fee>('FeeResponse', 'Fee');
-  mapper.createMap<MenuCategoryResponse, MenuCategory>(
-    'MenuCategoryResponse',
+  // **** ADDRESS ****
+  mapper
+    .createMap<Address, AddressRequestDto>('Address', 'AddressRequestDto')
+    .forMember(
+      (dest) => dest.address,
+      mapFrom((source) =>
+        mapper.map<Address, AddressDto>(source, 'AddressDto', 'Address')
+      )
+    );
+  mapper.createMap<Address, AddressDto>('Address', 'AddressDto');
+
+  // **** FEE ****
+  mapper.createMap<FeeDto, Fee>('FeeDto', 'Fee');
+
+  // **** MENU ****
+  mapper.createMap<MenuCategoryDto, MenuCategory>(
+    'MenuCategoryDto',
     'MenuCategory'
   );
-  mapper.createMap<MenuItemResponse, MenuCategoryItem>(
-    'MenuItemResponse',
+  mapper.createMap<MenuItemDto, MenuCategoryItem>(
+    'MenuItemDto',
     'MenuCategoryItem'
   );
-  mapper.createMap<
-    ServiceProviderRestaurantResponse,
-    ServiceProviderRestaurant
-  >('ServiceProviderRestaurantResponse', 'ServiceProviderRestaurant');
-  mapper.createMap<SummaryRestaurantResponse, RestaurantSummary>(
-    'SummaryRestaurantResponse',
+
+  // **** RESTAURANT SUMMARY ****
+  mapper.createMap<RestaurantSummarysResponseDto, RestaurantSummary[]>(
+    'RestaurantSummarysResponseDto',
     'RestaurantSummary'
+  );
+
+  mapper.createMap<RestaurantSummaryDto, RestaurantSummary>(
+    'RestaurantSummaryDto',
+    'RestaurantSummary'
+  );
+
+  // **** RESTAURANT DETAILS ****
+  mapper.createMap<RestaurantDetailsDto, RestaurantDetails>(
+    'RestaurantDetailsDto',
+    'RestaurantDetails'
+  );
+
+  // **** SERVICE PROVIDERS ****
+  mapper.createMap<RestaurantServiceProvidersResponseDto, ServiceProviders>(
+    'RestaurantServiceProvidersResponseDto',
+    'ServiceProviders'
+  );
+
+  mapper.createMap<RestaurantServiceProviderDto, ServiceProviderRestaurant>(
+    'RestaurantServiceProviderDto',
+    'ServiceProviderRestaurant'
   );
 }

@@ -4,6 +4,22 @@
     content: "Sort Restaurants By: ";
     color: #2b2b43;
   }
+
+  #view-fees-button {
+    .p-button {
+      padding: 0.5rem 1rem;
+      width: 100%;
+      box-shadow: 0px 8px 20px rgba(66, 135, 245, 0.16);
+      border-style: none;
+
+      font-family: "Nunito Sans";
+      font-weight: 500;
+      font-size: 14px;
+      margin: 1rem 0 0 0;
+
+      background-color: #4287f5;
+    }
+  }
 }
 
 :host {
@@ -69,6 +85,7 @@
     width: 100%;
     margin-bottom: 1rem;
   }
+
   .setting-container > h4 {
     margin: 0 0 1rem 0;
     font-weight: 500;
@@ -98,9 +115,10 @@
       color: #e3e8ee;
       border-radius: 4px;
       box-shadow: 0px 1px 2px rgba(55, 65, 81, 0.06),
-        0px 1px 3px rgba(55, 65, 81, 0.1);
+      0px 1px 3px rgba(55, 65, 81, 0.1);
       font-weight: 600;
     }
+
     .p-dropdown .p-dropdown-label.p-placeholder {
       font-family: "Nunito Sans";
       color: #2b2b43;
@@ -110,6 +128,7 @@
       font-family: "Nunito Sans";
       color: #8789a1;
     }
+
     .p-dropdown {
       width: 100%;
     }
@@ -121,9 +140,6 @@
       border-radius: 16px;
       position: initial;
     }
-    #setting-toggles {
-      flex-direction: row;
-    }
     hr {
       display: none;
     }
@@ -131,7 +147,6 @@
       display: none;
     }
     .setting-container {
-      width: 300px;
       margin-bottom: 0;
     }
   }

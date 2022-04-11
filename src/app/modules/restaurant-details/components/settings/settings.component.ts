@@ -10,16 +10,10 @@ export class SettingsComponent {
     // empty constructor
   }
 
-  @Input() isPanelShown = false;
-  @Output() isPanelShownChange = new EventEmitter<boolean>();
+  currentSubtotalValue: number = 20;
+  @Output() subtotalValueChange = new EventEmitter<number>();
 
-  openPanel() {
-    this.isPanelShownChange.emit(true);
+  handleSubtotalValueChange() {
+    this.subtotalValueChange.emit(this.currentSubtotalValue);
   }
-
-  closePanel() {
-    this.isPanelShownChange.emit(false);
-  }
-
-  currentValue: number = 50;
 }

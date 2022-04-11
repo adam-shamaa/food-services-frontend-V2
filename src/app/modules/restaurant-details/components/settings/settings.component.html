@@ -1,0 +1,27 @@
+<!--------- Settings Container ------------------>
+<div id="setting-toggles">
+  <div id="estimated-subtotal-container" class="setting-container">
+    <h4 style="display: flex; align-items: center">
+      Estimated Cart Subtotal:
+      <i
+        class="pi pi-question-circle"
+        style="margin-left: 0.5rem"
+        pTooltip="Estimated subtotal is used to estimate your fees when placing an order."
+      ></i>
+    </h4>
+    <div style="display: flex; align-items: center">
+      <div style="width: 100%; padding-right: 1rem">
+        <p-slider
+          [(ngModel)]="this.currentSubtotalValue"
+          (onSlideEnd)="handleSubtotalValueChange()"
+        ></p-slider>
+      </div>
+      <span> ${{ this.currentSubtotalValue }} </span>
+    </div>
+    <p-button
+      label="View Fees"
+      id="view-fees-button"
+      (click)="handleSubtotalValueChange()"
+    ></p-button>
+  </div>
+</div>

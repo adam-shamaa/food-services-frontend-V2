@@ -10,11 +10,14 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { SliderModule } from 'primeng/slider';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutocompleteComponent } from './components/autocomplete/autocomplete.component';
-import { SettingsComponent } from './components/settings/settings.component';
+import { SettingsComponent } from '../restaurant-details/components/settings/settings.component';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { DialogModule } from 'primeng/dialog';
 import { SkeletonModule } from 'primeng/skeleton';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { TooltipModule } from 'primeng/tooltip';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     DialogModule,
     SkeletonModule,
     InfiniteScrollModule,
+    TooltipModule,
+    ProgressSpinnerModule,
+    MatProgressSpinnerModule,
   ],
+  exports: [SettingsComponent],
 })
 export class DashboardModule {}

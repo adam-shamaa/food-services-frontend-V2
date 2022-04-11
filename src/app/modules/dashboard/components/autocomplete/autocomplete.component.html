@@ -1,32 +1,25 @@
 <div class="p-inputgroup">
   <p-autoComplete
-    [delay]="500"
+    [delay]="1000"
     [suggestions]="suggestions"
     [showEmptyMessage]="true"
     [(ngModel)]="searchQuery"
     [placeholder]="'Search Restaurants or Cuisines'"
     (completeMethod)="handleSearchQueryChange($event)"
-    (onSelect)="handleSuggestionSelection($event)"
-    (onClear)="handleSearchQueryCleared($event)"
-    field="name"
-    dataKey="id"
-    [emptyMessage]="
-      'No restaurants found. Try searching by cuisines and items.'
-    "
+    [completeOnFocus]="true"
+    emptyMessage=" "
   >
     <ng-template pTemplate="header">
-      <div class="item">
-        <span><b>Restaurants</b></span>
-        <a class="link" (click)="handleViewAllRestaurants()">View All</a>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <div class="item">
-        <a class="link" (click)="handleSearchCuisines()"
-          >Search Cuisines and Items</a
+      <ul class="p-autocomplete-items">
+        <li
+          class="p-ripple p-element p-autocomplete-item"
+          (click)="handleSearchRestaurants()"
         >
-      </div>
+          <div class="item">
+            <a class="link">Search Restaurants & Cuisines</a>
+          </div>
+        </li>
+      </ul>
     </ng-template>
   </p-autoComplete>
-  <i class="pi pi-search p-inputgroup-addon"></i>
 </div>

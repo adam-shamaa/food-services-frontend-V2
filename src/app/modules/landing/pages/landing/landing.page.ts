@@ -1,10 +1,10 @@
-import { Component, NgZone, ViewChild } from '@angular/core';
+import {Component, NgZone, ViewChild} from '@angular/core';
 import instructions from './landing-instructions.json';
-import { RestaurantsService } from '../../../../services/restaurants/restaurants.service';
-import { AddressSearchComponent } from '../../components/address-search/address-search.component';
-import { Router } from '@angular/router';
-import { take } from 'rxjs';
-import { Address } from '../../../../models/domain/address';
+import {RestaurantsService} from '../../../../services/restaurants/restaurants.service';
+import {AddressSearchComponent} from '../../components/address-search/address-search.component';
+import {Router} from '@angular/router';
+import {take} from 'rxjs';
+import {Address} from '../../../../models/domain/address';
 
 @Component({
   selector: 'app-landing',
@@ -17,24 +17,26 @@ export class LandingPage {
 
   instructionsList = instructions;
 
+
   constructor(
-    private restaurantsService: RestaurantsService,
-    private router: Router,
-    private ngZone: NgZone
-  ) {}
+      private restaurantsService: RestaurantsService,
+      private router: Router,
+      private ngZone: NgZone
+  ) {
+  }
 
   handleSearch(address: Address) {
     this.restaurantsService
-      .updateAddress(address)
-      .pipe(take(1))
-      .subscribe((addressUpdated) => {
-        if (!addressUpdated) {
-          return;
-        }
-        this.ngZone.run(() => {
-          this.router.navigateByUrl('dashboard');
+        .updateAddress(address)
+        .pipe(take(1))
+        .subscribe((addressUpdated) => {
+          if (!addressUpdated) {
+            return;
+          }
+          this.ngZone.run(() => {
+            this.router.navigateByUrl('dashboard');
+          });
         });
-      });
   }
 
   handleFooterCTAClick() {

@@ -6,8 +6,10 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { map, Observable, take } from 'rxjs';
+import { map, Observable, of, switchMap, take } from 'rxjs';
 import { RestaurantsService } from '../../../services/restaurants/restaurants.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Address } from '../../../models/domain/address';
 
 @Injectable({
   providedIn: 'root',
@@ -15,26 +17,29 @@ import { RestaurantsService } from '../../../services/restaurants/restaurants.se
 export class AddressGuard implements CanActivate {
   constructor(
     private restaurantsService: RestaurantsService,
-    private router: Router
+    private router: Router,
+    private cookieService: CookieService
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): Observable<boolean> {
     return this.restaurantsService.currentAddress.pipe(
       take(1),
-      map((currentAddress) => {
-        if (currentAddress == null) {
-          this.router.navigateByUrl('/');
-          return false;
-        } else {
-          return true;
+      switchMap((currentAddress) => {
+        if (currentAddress != null) {
+          return of(true);
         }
+
+        const cookieAddress = JSON.parse(
+          this.cookieService.get('front-end-address')
+        ) as Address;
+        if (cookieAddress == null) {
+          return of(false);
+        }
+
+        return this.restaurantsService.updateAddress(cookieAddress);
       })
     );
   }

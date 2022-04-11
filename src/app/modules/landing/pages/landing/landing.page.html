@@ -20,7 +20,6 @@
 <div
   class="instruction-container flex"
   *ngFor="let instruction of instructionsList; let index = index"
-  [ngClass]="index % 2 == 0 ? 'flex-direction-normal' : 'flex-direction-reverse'"
 >
   <img [src]="instruction.imageURL" />
   <div class="instruction-text flex flex-direction-column">

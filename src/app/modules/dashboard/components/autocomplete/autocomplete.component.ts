@@ -1,10 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-export interface SearchResult {
-  id: string;
-  name: string;
-}
-
 @Component({
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
@@ -15,31 +10,19 @@ export class AutocompleteComponent {
     // empty constructor
   }
 
-  searchQuery: string = '';
-  @Input() suggestions: SearchResult[] = [];
+  suggestions: string[] = [];
+
+  @Input() searchQuery: string = '';
   @Output() searchQueryChange = new EventEmitter<string>();
-  @Output() viewAllRestaurantsSelected = new EventEmitter<string>();
-  @Output() suggestionSelection = new EventEmitter<string>();
-  @Output() searchCuisinesSelected = new EventEmitter<string>();
-  @Output() searchQueryCleared = new EventEmitter<string>();
+
+  @Output() searchRestaurantsByQuery = new EventEmitter<string>();
 
   handleSearchQueryChange(event: any) {
-    this.searchQueryChange.next(this.searchQuery);
+    this.searchQueryChange.next(event.query);
+    this.suggestions = [];
   }
 
-  handleSuggestionSelection(event: any) {
-    this.suggestionSelection.next(event.id);
-  }
-
-  handleSearchCuisines() {
-    this.searchCuisinesSelected.emit(this.searchQuery);
-  }
-
-  handleViewAllRestaurants() {
-    this.viewAllRestaurantsSelected.emit('');
-  }
-
-  handleSearchQueryCleared(event: any) {
-    this.searchQueryCleared.emit('');
+  handleSearchRestaurants() {
+    this.searchRestaurantsByQuery.next(this.searchQuery);
   }
 }

@@ -4,7 +4,7 @@
   class="selectable"
 >
   <ng-template pTemplate="header">
-    <img [src]="restaurant.imageUrl"/>
+    <img [src]="restaurant.imageUrl" />
   </ng-template>
   <h2 id="restaurant-title" class="fw-600 dark-purple">
     {{ restaurant.name }}
@@ -18,12 +18,12 @@
     >
       <i class="pi pi-clock"></i>
       {{
-      restaurant.minEstimatedDeliveryTime ==
-      restaurant.maxEstimatedDeliveryTime
-        ? restaurant.minEstimatedDeliveryTime
-        : restaurant.minEstimatedDeliveryTime +
-        " - " +
+        restaurant.minEstimatedDeliveryTime ==
         restaurant.maxEstimatedDeliveryTime
+          ? restaurant.minEstimatedDeliveryTime
+          : restaurant.minEstimatedDeliveryTime +
+            " - " +
+            restaurant.maxEstimatedDeliveryTime
       }}
       mins
     </span>
@@ -33,19 +33,22 @@
         restaurant.maxEstimatedDeliveryTime != -1 &&
         restaurant.averageRating > 0
       "
-    >&nbsp; &#183; &nbsp;</span
     >
+      &nbsp; &#183; &nbsp;
+    </span>
     <span *ngIf="restaurant.averageRating > 0">
-      {{ restaurant.averageRating }} / 10 rating</span
-    >
+      {{ restaurant.averageRating }} / 10 rating
+    </span>
   </div>
 </p-card>
-
 <ng-template #skeletonLoader>
   <p-card>
     <ng-template pTemplate="header">
-      <p-skeleton [shape]="'rectangle'" height="100%" styleClass="z-index-zero">
-      </p-skeleton>
+      <p-skeleton
+        [shape]="'rectangle'"
+        height="100%"
+        styleClass="z-index-zero"
+      ></p-skeleton>
     </ng-template>
     <p-skeleton
       width="40%"

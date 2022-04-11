@@ -1,16 +1,25 @@
 import { createMetadataMap } from '@automapper/pojos';
 import {
-  AddressRequest,
-  DetailedRestaurantResponse,
-  ServiceProviderRestaurantResponse,
-  FeeResponse,
-  MenuCategoryResponse,
-  MenuItemResponse,
-  SummaryRestaurantResponse,
+  AddressDto,
+  FeeDto,
+  MenuCategoryDto,
+  MenuItemDto,
+  RestaurantSummaryDto,
+  AddressRequestDto,
+  RestaurantSummarysResponseDto,
+  RestaurantDetailsResponseDto,
+  RestaurantServiceProviderDto,
+  RestaurantServiceProvidersResponseDto,
 } from '@adam-shamaa/food-services-spec';
+import { RestaurantDetailsDto } from '@adam-shamaa/food-services-spec/model/restaurantDetails';
+import { ServiceProviderNameEnumDto } from '@adam-shamaa/food-services-spec/model/serviceProviderNameEnum';
 
 export const initializeDTOMetadataMaps = () => {
-  createMetadataMap<AddressRequest>('AddressRequest', {
+  // ***** Address ******
+  createMetadataMap<AddressRequestDto>('AddressRequestDto', {
+    address: 'AddressDto',
+  });
+  createMetadataMap<AddressDto>('AddressDto', {
     address: String,
     city: String,
     province: String,
@@ -20,30 +29,31 @@ export const initializeDTOMetadataMaps = () => {
     longitude: Number,
   });
 
-  createMetadataMap<DetailedRestaurantResponse>('DetailedRestaurantResponse', {
+  createMetadataMap<RestaurantDetailsResponseDto>(
+    'RestaurantDetailsResponseDto',
+    {
+      restaurantDetails: 'RestaurantDetailsDto',
+    }
+  );
+
+  // ***** Restaurant Details ******
+  createMetadataMap<RestaurantDetailsDto>('RestaurantDetailsDto', {
     name: String,
     imageUrl: String,
     formattedAddress: String,
     averageRating: Number,
     minEstimatedDeliveryTime: Number,
     maxEstimatedDeliveryTime: Number,
-    serviceProviders: 'ServiceProviderRestaurantResponse',
-    cheapestServiceProvider: String,
+    serviceProviders: String,
+    menu: 'MenuCategoryDto',
   });
 
-  createMetadataMap<FeeResponse>('FeeResponse', {
-    type: String,
-    magnitude: Number,
-    magnitudeUnits: String,
-    currency: String,
-  });
-
-  createMetadataMap<MenuCategoryResponse>('MenuCategoryResponse', {
+  createMetadataMap<MenuCategoryDto>('MenuCategoryDto', {
     name: String,
-    items: 'MenuItemResponse',
+    items: 'MenuItemDto',
   });
 
-  createMetadataMap<MenuItemResponse>('MenuItemResponse', {
+  createMetadataMap<MenuItemDto>('MenuItemDto', {
     name: String,
     description: String,
     magnitude: Number,
@@ -51,20 +61,42 @@ export const initializeDTOMetadataMaps = () => {
     currency: String,
   });
 
-  createMetadataMap<ServiceProviderRestaurantResponse>(
-    'ServiceProviderRestaurantResponse',
+  // ***** Restaurant Service Providers ******
+  createMetadataMap<RestaurantServiceProvidersResponseDto>(
+    'RestaurantServiceProvidersResponseDto',
+    {
+      serviceProviders: 'RestaurantServiceProviderDto',
+      cheapestServiceProvider: String,
+    }
+  );
+
+  createMetadataMap<RestaurantServiceProviderDto>(
+    'RestaurantServiceProviderDto',
     {
       minEstimatedDeliveryTime: Number,
       maxEstimatedDeliveryTime: Number,
       rating: Number,
       redirectUrl: String,
       serviceProviderName: String,
-      fees: 'FeeResponse',
-      menu: 'MenuCategoryResponse',
+      fees: 'FeeDto',
     }
   );
 
-  createMetadataMap<SummaryRestaurantResponse>('SummaryRestaurantResponse', {
+  createMetadataMap<FeeDto>('FeeDto', {
+    type: String,
+    magnitude: Number,
+    magnitudeUnits: String,
+    currency: String,
+  });
+
+  createMetadataMap<RestaurantSummarysResponseDto>(
+    'RestaurantSummarysResponseDto',
+    {
+      availableRestaurants: 'RestaurantSummaryDto',
+    }
+  );
+
+  createMetadataMap<RestaurantSummaryDto>('RestaurantSummaryDto', {
     name: String,
     imageUrl: String,
     averageRating: Number,

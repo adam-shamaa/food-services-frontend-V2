@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { LandingModule } from './modules/landing/landing.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
 import { RestaurantDetailsModule } from './modules/restaurant-details/restaurant-details.module';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,10 +18,10 @@ import { RestaurantDetailsModule } from './modules/restaurant-details/restaurant
     AppRoutingModule,
     LandingModule,
     DashboardModule,
-    HttpClientModule,
     RestaurantDetailsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CookieService],
   exports: [],
   bootstrap: [AppComponent],
 })

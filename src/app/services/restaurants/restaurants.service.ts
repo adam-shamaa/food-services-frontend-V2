@@ -1,19 +1,13 @@
 import { Injectable } from '@angular/core';
 import {
-  AggregatedServiceProviderRestaurants,
+  RestaurantDetails,
   RestaurantSummary,
+  ServiceProviders,
 } from '../../models/domain/restaurants';
-import {
-  BehaviorSubject,
-  delay,
-  map,
-  Observable,
-  of,
-  Subject,
-  take,
-} from 'rxjs';
+import { BehaviorSubject, map, Observable, of, Subject, take } from 'rxjs';
 import { RestaurantsFacade } from './restaurants.facade';
 import { Address } from '../../models/domain/address';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root',
@@ -29,14 +23,24 @@ export class RestaurantsService {
   availableRestaurants: Observable<RestaurantSummary[] | null> =
     this.availableRestaurants$.asObservable();
 
-  selectedRestaurant$: Subject<AggregatedServiceProviderRestaurants | null> =
-    new Subject();
-  selectedRestaurant: Observable<AggregatedServiceProviderRestaurants | null> =
+  selectedRestaurant$: Subject<RestaurantDetails | null> = new Subject();
+  selectedRestaurant: Observable<RestaurantDetails | null> =
     this.selectedRestaurant$.asObservable();
 
-  constructor(private restaurantServiceFacade: RestaurantsFacade) {}
+  selectedRestaurantServiceProviders$: Subject<
+    ServiceProviders | null | undefined
+  > = new Subject();
+  selectedRestaurantServiceProviders: Observable<
+    ServiceProviders | null | undefined
+  > = this.selectedRestaurantServiceProviders$.asObservable();
+
+  constructor(
+    private restaurantServiceFacade: RestaurantsFacade,
+    private cookieService: CookieService
+  ) {}
 
   updateAddress(address: Address): Observable<boolean> {
+    this.cookieService.set('front-end-address', JSON.stringify(address));
     return this.restaurantServiceFacade.postAddress(address).pipe(
       map((addressUpdated) => {
         if (addressUpdated) {
@@ -58,13 +62,27 @@ export class RestaurantsService {
     return of(true);
   }
 
-  getRestaurant(id: string): Observable<boolean> {
+  getSingleRestaurant(id: string): Observable<boolean> {
     this.selectedRestaurant$.next(null);
     this.restaurantServiceFacade
       .getRestaurantDetails(id)
-      .pipe(take(1), delay(5000))
+      .pipe(take(1))
       .subscribe((restaurant) => {
         this.selectedRestaurant$.next(restaurant);
+      });
+    return of(true);
+  }
+
+  getRestaurantServiceProviders(
+    id: string,
+    subtotal: number
+  ): Observable<boolean> {
+    this.selectedRestaurantServiceProviders$.next(undefined);
+    this.restaurantServiceFacade
+      .getServiceProviders(id, subtotal)
+      .pipe(take(1))
+      .subscribe((serviceProviders) => {
+        this.selectedRestaurantServiceProviders$.next(serviceProviders);
       });
     return of(true);
   }
