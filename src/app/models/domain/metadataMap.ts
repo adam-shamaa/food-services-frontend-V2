@@ -74,5 +74,6 @@ export const initializeDomainMetadataMaps = () => {
     magnitude: Number,
     magnitudeUnit: String,
     currency: String,
+    imageUrl: String,
   });
 };

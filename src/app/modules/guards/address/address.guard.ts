@@ -24,7 +24,7 @@ export class AddressGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean> {
+  ): Observable<boolean | UrlTree> | UrlTree {
     return this.restaurantsService.currentAddress.pipe(
       take(1),
       switchMap((currentAddress) => {
@@ -32,12 +32,13 @@ export class AddressGuard implements CanActivate {
           return of(true);
         }
 
-        const cookieAddress = JSON.parse(
-          this.cookieService.get('front-end-address')
-        ) as Address;
-        if (cookieAddress == null) {
-          return of(false);
+        const frontEndAddressCookie =
+          this.cookieService.get('front-end-address');
+        if (frontEndAddressCookie == '') {
+          return of(this.router.parseUrl(''));
         }
+
+        const cookieAddress = JSON.parse(frontEndAddressCookie) as Address;
 
         return this.restaurantsService.updateAddress(cookieAddress);
       })

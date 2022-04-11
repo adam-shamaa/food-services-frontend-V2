@@ -50,4 +50,5 @@ export interface MenuCategoryItem {
   magnitude: number;
   magnitudeUnit: string;
   currency: string;
+  imageUrl: string;
 }

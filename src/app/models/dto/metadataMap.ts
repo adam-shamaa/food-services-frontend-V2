@@ -59,6 +59,7 @@ export const initializeDTOMetadataMaps = () => {
     magnitude: Number,
     magnitudeUnit: String,
     currency: String,
+    imageUrl: String,
   });
 
   // ***** Restaurant Service Providers ******

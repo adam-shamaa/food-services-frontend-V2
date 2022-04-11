@@ -3,23 +3,23 @@
     <div class="nav-bar">
       <div class="nav-section flex">
         <img
-                src="./../../../../../assets/img/mock-logo.svg"
-                alt=""
-                width="150"
+          src="./../../../../../assets/img/mock-logo.svg"
+          alt=""
+          width="150"
         />
         <h4
-                id="delivery-address"
-                class="fw-500 dark-purple"
-                *ngIf="(currentAddress$ | async) as currentAddress"
+          id="delivery-address"
+          class="fw-500 dark-purple"
+          *ngIf="(currentAddress$ | async) as currentAddress"
         >
-          Delivery <br/>
+          Delivery <br />
           {{currentAddress.street}}
         </h4>
       </div>
     </div>
   </div>
   <div class="image-banner">
-    <img [src]="restaurant.imageUrl" alt=""/>
+    <img [src]="restaurant.imageUrl" alt="" />
   </div>
   <div class="content-container">
     <div class="header-container">
@@ -36,19 +36,19 @@
     <div class="restaurant-details-info">
       <div class="menu-section">
         <div
-                class="restaurants-details-section menu-appendix-section"
-                *ngIf="restaurant"
+          class="restaurants-details-section menu-appendix-section"
+          *ngIf="restaurant"
         >
           <div class="menu-appendix-container">
             <nav class="navbar navbar-inverse navbar-fixed-top" id="test">
               <ul class="nav navbar-nav" id="nav">
                 <li
-                        *ngFor="let category of restaurant.menu; let index=index"
-                        (click)="scroll(index)"
-                        class="selectable"
+                  *ngFor="let category of restaurant.menu; let index=index"
+                  (click)="scroll(index)"
+                  class="selectable"
                 >
                   <a id="disabledLink" class="selectable" [href]="'#' + index"
-                  >{{category.name}}</a
+                    >{{category.name}}</a
                   >
                 </li>
               </ul>
@@ -56,31 +56,36 @@
           </div>
         </div>
         <div
-                class="restaurants-details-section menu-items-section"
-                *ngIf="restaurant"
+          class="restaurants-details-section menu-items-section"
+          *ngIf="restaurant"
         >
           <h3 class="restaurants-details-section-header fw-600">Menu</h3>
           <div
-                  *ngFor="let category of restaurant.menu; let index=index"
-                  [id]="index"
+            *ngFor="let category of restaurant.menu; let index=index"
+            [id]="index"
           >
             <div>
               <h3>{{category.name}}</h3>
               <div
-                      class="menu-item"
-                      *ngFor="let categoryItem of category.items"
+                class="menu-item"
+                *ngFor="let categoryItem of category.items"
               >
-                <div class="menu-item-header">
-                  <span>{{categoryItem.name}}</span>
-                </div>
-                <div class="menu-item-body">
-                  <span>{{categoryItem.description}}</span>
-                </div>
-                <div class="menu-item-footer">
-                  <span
-                  >${{categoryItem.magnitude | convertCurrencyUnits :
+                <div class="menu-item-text">
+                  <div class="menu-item-header">
+                    <span>{{categoryItem.name}}</span>
+                  </div>
+                  <div class="menu-item-body">
+                    <span>{{categoryItem.description}}</span>
+                  </div>
+                  <div class="menu-item-footer">
+                    <span
+                      >${{categoryItem.magnitude | convertCurrencyUnits :
                       categoryItem.magnitudeUnit : "DOLLARS"}}</span
-                  >
+                    >
+                  </div>
+                </div>
+                <div class="menu-item-image">
+                  <img [src]="categoryItem.imageUrl" />
                 </div>
               </div>
             </div>
@@ -91,7 +96,7 @@
         <div class="fees-container">
           <div class="app-settings-container">
             <app-settings
-                    (subtotalValueChange)="handleEstimatedCartSizeChange($event)"
+              (subtotalValueChange)="handleEstimatedCartSizeChange($event)"
             ></app-settings>
           </div>
           <div *ngIf="serviceProviders else serviceProvidersLoading">
@@ -100,20 +105,20 @@
             </h3>
             <div id="service-provider-select-container">
               <mat-button-toggle-group
-                      [vertical]="true"
-                      name="serviceProvider"
-                      aria-label="Service Provider"
-                      (change)="handleServiceProviderChange($event)"
-                      [value]="serviceProviders.cheapestServiceProvider"
+                [vertical]="true"
+                name="serviceProvider"
+                aria-label="Service Provider"
+                (change)="handleServiceProviderChange($event)"
+                [value]="serviceProviders.cheapestServiceProvider"
               >
                 <mat-button-toggle
-                        *ngFor="let serviceProvider of this.serviceProviders.serviceProviders"
-                        [value]="serviceProvider.serviceProviderName"
+                  *ngFor="let serviceProvider of this.serviceProviders.serviceProviders"
+                  [value]="serviceProvider.serviceProviderName"
                 >
                   <span>{{serviceProvider.serviceProviderName}}</span>
                   <div
-                          id="best-deal-container"
-                          *ngIf="serviceProviders.cheapestServiceProvider == serviceProvider.serviceProviderName"
+                    id="best-deal-container"
+                    *ngIf="serviceProviders.cheapestServiceProvider == serviceProvider.serviceProviderName"
                   >
                     <span>Best Deal</span>
                   </div>
@@ -125,28 +130,28 @@
                 {{selectedServiceProvider.serviceProviderName}} Fees
               </h3>
               <div
-                      class="fee-line"
-                      *ngFor="let fee of selectedServiceProvider.fees"
+                class="fee-line"
+                *ngFor="let fee of selectedServiceProvider.fees"
               >
                 <p>{{fee.type}}</p>
                 <p>
                   ${{fee.magnitude | convertCurrencyUnits : fee.magnitudeUnits :
-                    "DOLLARS"}}
+                  "DOLLARS"}}
                 </p>
               </div>
-              <hr/>
+              <hr />
               <div class="fee-line">
                 <p>Total</p>
                 <p>
                   ${{selectedServiceProvider.fees | sum: "magnitude" |
-                    convertCurrencyUnits :
-                    selectedServiceProvider.fees[0].magnitudeUnits : "DOLLARS"}}
+                  convertCurrencyUnits :
+                  selectedServiceProvider.fees[0].magnitudeUnits : "DOLLARS"}}
                 </p>
               </div>
               <p-button
-                      label="Order Now"
-                      id="order-now-button"
-                      (click)="openNewWindow(selectedServiceProvider!.redirectUrl!)"
+                label="Order Now"
+                id="order-now-button"
+                (click)="openNewWindow(selectedServiceProvider!.redirectUrl!)"
               ></p-button>
               <div class="muted" style="text-align: justify">
                 <span>
@@ -157,9 +162,9 @@
             </div>
           </div>
           <ng-template #serviceProvidersLoading>
-            <div *ngIf="serviceProviders === null else serviceProviderSpinner">
-
-            </div>
+            <div
+              *ngIf="serviceProviders === null else serviceProviderSpinner"
+            ></div>
             <ng-template #serviceProviderSpinner>
               <div class="flex justify-content-center">
                 <mat-spinner strokeWidth="5"></mat-spinner>
@@ -180,32 +185,32 @@
     <div class="content-container">
       <div class="header-container">
         <p-skeleton
-                [shape]="'rectangle'"
-                width="20%"
-                height="0.9rem"
-                styleClass="p-skeleton-margin"
+          [shape]="'rectangle'"
+          width="20%"
+          height="0.9rem"
+          styleClass="p-skeleton-margin"
         >
         </p-skeleton>
         <p-skeleton
-                [shape]="'rectangle'"
-                width="30%"
-                height="0.9rem"
-                styleClass="p-skeleton-margin"
+          [shape]="'rectangle'"
+          width="30%"
+          height="0.9rem"
+          styleClass="p-skeleton-margin"
         >
         </p-skeleton>
         <p-skeleton
-                [shape]="'rectangle'"
-                width="30%"
-                height="0.9rem"
-                styleClass="p-skeleton-margin"
+          [shape]="'rectangle'"
+          width="30%"
+          height="0.9rem"
+          styleClass="p-skeleton-margin"
         >
         </p-skeleton>
       </div>
       <p-skeleton
-              [shape]="'rectangle'"
-              width="50%"
-              height="3rem"
-              styleClass="p-skeleton-margin"
+        [shape]="'rectangle'"
+        width="50%"
+        height="3rem"
+        styleClass="p-skeleton-margin"
       >
       </p-skeleton>
       <div class="restaurant-details-info">
@@ -216,10 +221,10 @@
                 <ul class="nav navbar-nav">
                   <li *ngFor="let e of [].constructor(8);">
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="5rem"
-                            height="0.9rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="5rem"
+                      height="0.9rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                   </li>
@@ -231,51 +236,51 @@
             <div *ngFor="let e of [].constructor(1);">
               <div>
                 <p-skeleton
-                        [shape]="'rectangle'"
-                        width="8rem"
-                        height="1rem"
-                        styleClass="p-skeleton-margin"
+                  [shape]="'rectangle'"
+                  width="8rem"
+                  height="1rem"
+                  styleClass="p-skeleton-margin"
                 >
                 </p-skeleton>
                 <div class="menu-item" *ngFor="let e of [].constructor(1);">
                   <div class="menu-item-header">
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="8rem"
-                            height="1rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="8rem"
+                      height="1rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                   </div>
                   <div class="menu-item-body">
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="25%"
-                            height="1rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="25%"
+                      height="1rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="40%"
-                            height="1rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="40%"
+                      height="1rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="60%"
-                            height="1rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="60%"
+                      height="1rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                   </div>
                   <div class="menu-item-footer">
                     <p-skeleton
-                            [shape]="'rectangle'"
-                            width="4rem"
-                            height="1rem"
-                            styleClass="p-skeleton-margin"
+                      [shape]="'rectangle'"
+                      width="4rem"
+                      height="1rem"
+                      styleClass="p-skeleton-margin"
                     >
                     </p-skeleton>
                   </div>
@@ -287,34 +292,34 @@
         <div class="restaurants-details-section fees-section">
           <div class="fees-container">
             <p-skeleton
-                    [shape]="'rectangle'"
-                    width="3rem"
-                    height="1rem"
-                    styleClass="p-skeleton-margin"
+              [shape]="'rectangle'"
+              width="3rem"
+              height="1rem"
+              styleClass="p-skeleton-margin"
             >
             </p-skeleton>
             <div>
               <div class="fee-line" *ngFor="let e of [].constructor(2);">
                 <p-skeleton
-                        [shape]="'rectangle'"
-                        width="6rem"
-                        height="0.7rem"
-                        styleClass="p-skeleton-margin"
+                  [shape]="'rectangle'"
+                  width="6rem"
+                  height="0.7rem"
+                  styleClass="p-skeleton-margin"
                 >
                 </p-skeleton>
                 <p-skeleton
-                        [shape]="'rectangle'"
-                        width="2rem"
-                        height="0.7rem"
-                        styleClass="p-skeleton-margin"
+                  [shape]="'rectangle'"
+                  width="2rem"
+                  height="0.7rem"
+                  styleClass="p-skeleton-margin"
                 >
                 </p-skeleton>
               </div>
               <p-skeleton
-                      [shape]="'rectangle'"
-                      width="100%"
-                      height="1.8rem"
-                      styleClass="p-skeleton-margin"
+                [shape]="'rectangle'"
+                width="100%"
+                height="1.8rem"
+                styleClass="p-skeleton-margin"
               >
               </p-skeleton>
             </div>

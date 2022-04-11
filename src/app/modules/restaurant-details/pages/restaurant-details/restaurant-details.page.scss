@@ -258,6 +258,24 @@ li.active > a {
         padding: 1rem 0;
       }
 
+      .menu-item {
+        display: flex;
+        flex-display: row;
+        justify-content: space-between;
+      }
+
+      .menu-item-text {
+        min-width: 80%;
+      }
+
+      .menu-item-image {
+        max-width: 15%;
+      }
+
+      .menu-item-image img {
+        width: 100%;
+      }
+
       .fees-section {
         width: 25%;
       }
