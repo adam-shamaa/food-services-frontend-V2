@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "targetOLBB": "https://my-app-3dse6.ondigitalocean.app",
+    "target": "https://my-app-3dse6.ondigitalocean.app",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

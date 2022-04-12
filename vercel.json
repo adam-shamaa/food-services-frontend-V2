@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://my-app-3dse6.ondigitalocean.app/:match*"
+    }
+  ]
+}

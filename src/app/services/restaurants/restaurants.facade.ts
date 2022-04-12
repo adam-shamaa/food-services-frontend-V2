@@ -45,7 +45,7 @@ export class RestaurantsFacade {
       .get<RestaurantSummarysResponseDto>(this.baseUrl + '/restaurants', {
         observe: 'response',
         withCredentials: true,
-        params: { searchQuery: searchQuery },
+        params: { searchQuery: searchQuery, withCredentials: true },
       })
       .pipe(
         map((response) => response.body),

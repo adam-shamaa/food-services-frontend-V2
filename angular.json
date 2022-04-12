@@ -86,6 +86,10 @@
               "browserTarget": "food-services-frontend:build:development"
             }
           },
+          "options": {
+            "browserTarget": "food-services-frontend:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
