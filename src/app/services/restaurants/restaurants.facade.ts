@@ -16,12 +16,13 @@ import {
   ServiceProviders,
 } from '../../models/domain/restaurants';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RestaurantsFacade {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = environment.API_BASE_PATH;
 
   constructor(private httpClient: HttpClient) {}
 
