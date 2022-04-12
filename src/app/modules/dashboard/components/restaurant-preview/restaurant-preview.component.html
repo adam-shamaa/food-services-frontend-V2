@@ -2,9 +2,10 @@
   styleClass="p-card-shadow"
   *ngIf="restaurant; else skeletonLoader"
   class="selectable"
+  tabindex="0"
 >
-  <ng-template pTemplate="header">
-    <img [src]="restaurant.imageUrl" />
+  <ng-template pTemplate="header" [aria-hidden]="true">
+    <img [src]="restaurant.imageUrl" alt="" />
   </ng-template>
   <h2 id="restaurant-title" class="fw-600 dark-purple">
     {{ restaurant.name }}
@@ -33,6 +34,7 @@
         restaurant.maxEstimatedDeliveryTime != -1 &&
         restaurant.averageRating > 0
       "
+      aria-hidden="true"
     >
       &nbsp; &#183; &nbsp;
     </span>

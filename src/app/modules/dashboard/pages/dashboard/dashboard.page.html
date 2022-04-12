@@ -20,31 +20,9 @@
         </app-autocomplete>
       </div>
     </div>
-    <!--
-    <div class="nav-section">
-      <div id="setting-icons" class="flex alight-items-center">
-        <div
-          (click)="this.handleSettingsShow()"
-          class="flex alight-items-center selectable disable-text-select"
-        >
-          <i class="pi pi-sliders-h" style="font-size: 2rem"></i>
-          <span>{{isSettingsPanelShown ? "Hide" : "Show"}} Settings</span>
-        </div>
-      </div>
-    </div>
-    -->
   </div>
 </div>
 <hr />
-
-<!--
-<div class="app-container">
-  <app-settings
-    [(isPanelShown)]="isSettingsPanelShown"
-    [(currentSubtotalValue)]="estimatedSubtotalNumber"
-  ></app-settings>
-</div>
--->
 
 <!--------- Restaurants List Container ------------------>
 <div class="app-container">
@@ -58,9 +36,10 @@
     (scrolled)="appendDisplayedRestaurants()"
   >
     <app-restaurant-preview
-      *ngFor="let availableRestaurant of displayedRestaurants"
       [restaurant]="availableRestaurant"
+      *ngFor="let availableRestaurant of displayedRestaurants"
       (click)="viewRestaurantDetails(availableRestaurant.id)"
+      (keydown.enter)="viewRestaurantDetails(availableRestaurant.id)"
     ></app-restaurant-preview>
   </div>
   <ng-template #skeletonListsContainer class="restaurants-list-container">

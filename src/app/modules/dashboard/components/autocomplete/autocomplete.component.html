@@ -8,6 +8,7 @@
     (completeMethod)="handleSearchQueryChange($event)"
     [completeOnFocus]="true"
     emptyMessage=" "
+    (keydown.enter)="handleSearchRestaurants()"
   >
     <ng-template pTemplate="header">
       <ul class="p-autocomplete-items">

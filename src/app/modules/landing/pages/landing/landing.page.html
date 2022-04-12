@@ -1,5 +1,9 @@
 <div id="nav" class="flex w-100">
-  <img src="./../../../../../assets/img/mock-logo.svg" alt="" width="178" />
+  <img
+    src="./../../../../../assets/img/mock-logo.svg"
+    alt="Food delivery services logo"
+    width="178"
+  />
 </div>
 <div
   id="landing-header"
@@ -21,7 +25,7 @@
   class="instruction-container flex"
   *ngFor="let instruction of instructionsList; let index = index"
 >
-  <img [src]="instruction.imageURL" />
+  <img [src]="instruction.imageURL" [alt]="instruction.imageAltText" />
   <div class="instruction-text flex flex-direction-column">
     <h3 class="purple">{{instruction.titleSummary}}</h3>
     <h2 class="dark-purple">{{instruction.title}}</h2>

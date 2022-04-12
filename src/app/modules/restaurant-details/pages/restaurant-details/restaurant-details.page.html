@@ -66,28 +66,35 @@
           >
             <div>
               <h3>{{category.name}}</h3>
-              <div
-                class="menu-item"
-                *ngFor="let categoryItem of category.items"
-              >
-                <div class="menu-item-text">
-                  <div class="menu-item-header">
-                    <span>{{categoryItem.name}}</span>
+              <ul>
+                <li *ngFor="let categoryItem of category.items">
+                  <div
+                    class="menu-item"
+                    [attr.aria-label]="
+                    categoryItem.name
+                    + (categoryItem.description ? (' - ' + categoryItem.description) : '')
+                    + ' - $' + (categoryItem.magnitude | convertCurrencyUnits : categoryItem.magnitudeUnit : 'DOLLARS')"
+                  >
+                    <div class="menu-item-text">
+                      <div class="menu-item-header">
+                        <span>{{categoryItem.name}}</span>
+                      </div>
+                      <div class="menu-item-body">
+                        <span>{{categoryItem.description}}</span>
+                      </div>
+                      <div class="menu-item-footer">
+                        <span
+                          >${{categoryItem.magnitude | convertCurrencyUnits :
+                          categoryItem.magnitudeUnit : "DOLLARS"}}</span
+                        >
+                      </div>
+                    </div>
+                    <div class="menu-item-image">
+                      <img [src]="categoryItem.imageUrl" alt="" />
+                    </div>
                   </div>
-                  <div class="menu-item-body">
-                    <span>{{categoryItem.description}}</span>
-                  </div>
-                  <div class="menu-item-footer">
-                    <span
-                      >${{categoryItem.magnitude | convertCurrencyUnits :
-                      categoryItem.magnitudeUnit : "DOLLARS"}}</span
-                    >
-                  </div>
-                </div>
-                <div class="menu-item-image">
-                  <img [src]="categoryItem.imageUrl" />
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
