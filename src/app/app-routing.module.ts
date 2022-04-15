@@ -6,20 +6,28 @@ import { RestaurantDetailsPage } from './modules/restaurant-details/pages/restau
 import { AddressGuard } from './modules/guards/address/address.guard';
 
 const routes: Routes = [
-  { path: '', component: LandingPage },
+  {
+    path: '',
+    component: LandingPage,
+    data: {
+      title: 'Landing Page | Food-Services',
+    },
+  },
   {
     path: 'dashboard',
     canActivate: [AddressGuard],
-    children: [
-      {
-        path: '',
-        component: DashboardPage,
-      },
-      {
-        path: ':restaurantId',
-        component: RestaurantDetailsPage,
-      },
-    ],
+    component: DashboardPage,
+    data: {
+      title: 'Available Restaurants | Food-Services',
+    },
+  },
+  {
+    path: 'dashboard/:restaurantId',
+    canActivate: [AddressGuard],
+    component: RestaurantDetailsPage,
+    data: {
+      title: 'Restaurant Details | Food-Services',
+    },
   },
 ];
 
