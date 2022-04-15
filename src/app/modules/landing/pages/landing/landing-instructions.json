@@ -3,8 +3,8 @@
     "imageURL": "./../../../../../assets/img/enter-address-preview.png",
     "imageAltText": "",
     "titleSummary": "Enter an Address",
-    "title": "Enter an address to get started",
-    "titleDescription": "We value your privacy, your address is never stored by us!"
+    "title": "Enter a full address to get started",
+    "titleDescription": "Enter a full Canadian address to get started!"
   },
   {
     "imageURL": "./../../../../../assets/img/select-restaurant-preview.png",
