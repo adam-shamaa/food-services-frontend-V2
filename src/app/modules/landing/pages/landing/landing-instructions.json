@@ -2,22 +2,22 @@
   {
     "imageURL": "./../../../../../assets/img/enter-address-preview.png",
     "imageAltText": "",
-    "titleSummary": "Enter an Address",
-    "title": "Enter a full address to get started",
-    "titleDescription": "Enter a full Canadian address to get started!"
+    "titleSummary": "Get Started",
+    "title": "Enter a full Canadian address",
+    "titleDescription": ""
   },
   {
     "imageURL": "./../../../../../assets/img/select-restaurant-preview.png",
     "imageAltText": "",
     "titleSummary": "Explore varieties",
-    "title": "Shop for your favorite restaurants",
-    "titleDescription": "Shop for your favorite restaurants from all compatible delivery services"
+    "title": "Shop for your favorite restaurants from all compatible delivery service providers",
+    "titleDescription": ""
   },
   {
     "imageURL": "./../../../../../assets/img/order-preview.png",
     "imageAltText": "",
-    "titleSummary": "Checkout",
-    "title": "Find your favorite restaurant",
-    "titleDescription": "We’ll redirect you to the cheapest delivery service where you can complete your order"
+    "titleSummary": "View Menu & Checkout",
+    "title": "We’ll redirect you to the cheapest delivery service where you can complete your order",
+    "titleDescription": ""
   }
 ]
