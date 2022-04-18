@@ -278,9 +278,7 @@ li.active > a {
 
       .fees-section {
         width: 25%;
-      }
 
-      .fees-container {
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 15rem;
@@ -288,6 +286,11 @@ li.active > a {
         border-radius: 1rem;
         padding: 1rem;
 
+        max-height: calc(100vh - 15rem);
+        overflow-y: scroll;
+      }
+
+      .fees-container {
         .app-settings-container {
           margin-bottom: 3rem;
         }
@@ -462,6 +465,9 @@ li.active > a {
         width: 100%;
         max-width: 35rem;
         margin: 0 auto;
+
+        position: static;
+        max-height: 100%;
       }
 
       .fees-container {
