@@ -12,4 +12,5 @@ export class RestaurantPreviewComponent {
   }
 
   @Input() restaurant?: RestaurantSummary;
+  @Input() redirectLink?: string;
 }

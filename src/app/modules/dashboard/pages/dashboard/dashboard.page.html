@@ -38,8 +38,7 @@
     <app-restaurant-preview
       [restaurant]="availableRestaurant"
       *ngFor="let availableRestaurant of displayedRestaurants"
-      (click)="viewRestaurantDetails(availableRestaurant.id)"
-      (keydown.enter)="viewRestaurantDetails(availableRestaurant.id)"
+      [redirectLink]="'/dashboard/' + availableRestaurant.id"
     ></app-restaurant-preview>
   </div>
   <ng-template #skeletonListsContainer class="restaurants-list-container">

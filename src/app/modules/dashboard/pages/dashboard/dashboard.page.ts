@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SettingsComponent } from '../../../restaurant-details/components/settings/settings.component';
 import { Observable } from 'rxjs';
 import { RestaurantsService } from '../../../../services/restaurants/restaurants.service';
@@ -72,9 +72,5 @@ export class DashboardPage implements OnInit {
         searchQuery: restaurantSearchQuery,
       },
     });
-  }
-
-  viewRestaurantDetails(restaurantId: string) {
-    this.router.navigate(['/dashboard/' + restaurantId]);
   }
 }
