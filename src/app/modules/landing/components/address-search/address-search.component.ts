@@ -44,13 +44,13 @@ export class AddressSearchComponent implements AfterViewInit, OnDestroy {
           this.handleSearch.emit({
             address: address.formatted_address!,
             street:
-              address.address_components!.find((element) =>
+              (address.address_components!.find((element) =>
                 element.types.includes('street_number')
-              )?.long_name! +
+              )?.long_name || '') +
               ' ' +
-              address.address_components!.find((element) =>
+              (address.address_components!.find((element) =>
                 element.types.includes('route')
-              )?.long_name!,
+              )?.long_name || ''),
             city: address.address_components!.find((element) =>
               element.types.includes('locality')
             )?.long_name!,

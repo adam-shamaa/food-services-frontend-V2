@@ -40,7 +40,15 @@ export class RestaurantsService {
   ) {}
 
   updateAddress(address: Address): Observable<boolean> {
-    this.cookieService.set('front-end-address', JSON.stringify(address));
+    this.cookieService.set(
+      'front-end-address',
+      JSON.stringify(address),
+      1,
+      '/',
+      '',
+      true,
+      'Strict'
+    );
     return this.restaurantServiceFacade.postAddress(address).pipe(
       map((addressUpdated) => {
         if (addressUpdated) {
