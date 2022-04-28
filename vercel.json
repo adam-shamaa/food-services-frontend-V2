@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:match*",
-      "destination": "https://my-app-3dse6.ondigitalocean.app/:match*"
+      "destination": "https://food-services-backend.herokuapp.com/:match*"
     }
   ]
 }
