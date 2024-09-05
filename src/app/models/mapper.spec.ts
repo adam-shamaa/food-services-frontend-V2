@@ -4,7 +4,7 @@ import {
   AddressDto,
   AddressRequestDto,
   RestaurantSummaryDto,
-} from '@adam-shamaa/food-services-spec';
+} from '@adam-shamaa/food-services-aggregator-spec';
 import { initializeMappers, mapper } from './mapper';
 import { initializeDTOMetadataMaps } from './dto/metadataMap';
 import { initializeDomainMetadataMaps } from './domain/metadataMap';
