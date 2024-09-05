@@ -37,3 +37,4 @@ This client uses auto-generated helpers and classes to communicate with the back
 2. Run the app `npm start`
 
 ## Demo
+https://github.com/user-attachments/assets/c5fb5a11-8fec-42a7-8a4c-ac053c8cd89a
