@@ -10,9 +10,9 @@ import {
   RestaurantDetailsResponseDto,
   RestaurantServiceProviderDto,
   RestaurantServiceProvidersResponseDto,
-} from '@adam-shamaa/food-services-spec';
-import { RestaurantDetailsDto } from '@adam-shamaa/food-services-spec/model/restaurantDetails';
-import { ServiceProviderNameEnumDto } from '@adam-shamaa/food-services-spec/model/serviceProviderNameEnum';
+} from '@adam-shamaa/food-services-aggregator-spec';
+import { RestaurantDetailsDto } from '@adam-shamaa/food-services-aggregator-spec/model/restaurantDetails';
+import { ServiceProviderNameEnumDto } from '@adam-shamaa/food-services-aggregator-spec/model/serviceProviderNameEnum';
 
 export const initializeDTOMetadataMaps = () => {
   // ***** Address ******

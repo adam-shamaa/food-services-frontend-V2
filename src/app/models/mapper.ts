@@ -20,7 +20,7 @@ import {
   AddressDto,
   RestaurantServiceProviderDto,
   RestaurantServiceProvidersResponseDto,
-} from '@adam-shamaa/food-services-spec';
+} from '@adam-shamaa/food-services-aggregator-spec';
 import { Address } from './domain/address';
 
 export const mapper = createMapper({

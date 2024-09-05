@@ -101,5 +101,8 @@
       }
     }
   },
-  "defaultProject": "food-services-frontend"
+  "defaultProject": "food-services-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

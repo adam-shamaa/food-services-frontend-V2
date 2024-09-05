@@ -9,7 +9,7 @@ import {
   RestaurantSummaryDto,
   RestaurantDetailsDto,
   RestaurantServiceProvidersResponseDto,
-} from '@adam-shamaa/food-services-spec';
+} from '@adam-shamaa/food-services-aggregator-spec';
 import {
   RestaurantDetails,
   RestaurantSummary,

@@ -1,0 +1,14 @@
+# docker-compose config strictly for dev environment
+
+version: '3.8'
+services:
+    api:
+      build:
+        context: .
+        target: base
+      container_name: food-services-frontend
+      ports: 
+        - 4200:4200
+      command: npm run ng -- serve --host 0.0.0.0 --disable-host-check
+      volumes:
+        - ./:/app
